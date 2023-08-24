@@ -14,6 +14,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        foreach (config('users') as $user) {
+
+            $$user = User::create([
+
+                "name"                => $$user['name'],
+                "lastname"            => $$user['lastname'],
+                "email"               => $$user['email'],
+                "pw"                  => $$user['pw
+                '],
+            ]);
+        }
     }
 }

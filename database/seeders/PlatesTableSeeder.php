@@ -14,6 +14,19 @@ class PlatesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+
+        foreach (config('plates') as $plate) {
+
+            $plate = Plate::create([
+
+                "name"              => $plate['name'],
+                "ingredients"       => $plate['ingredients'],
+                "price"             => $plate['price'],
+                "visibility"        => $plate['visibility'],
+                "restaurant_id"     => $plate['restaurant_id'],
+
+
+            ]);
+        }
     }
 }

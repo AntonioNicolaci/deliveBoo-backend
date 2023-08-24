@@ -14,6 +14,15 @@ class RestaurantsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        foreach (config('restaurants') as $restaurant) {
+
+            $restaurant = Restaurant::create([
+
+                "name"               => $restaurant['name'],
+                "address"            => $restaurant['address'],
+                "vat"                => $restaurant['vat'],
+                "img"                => $restaurant['img'],
+            ]);
+        }
     }
 }
