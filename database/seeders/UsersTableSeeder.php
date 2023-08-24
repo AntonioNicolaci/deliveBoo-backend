@@ -22,8 +22,7 @@ class UsersTableSeeder extends Seeder
                 "name"                => $$user['name'],
                 "lastname"            => $$user['lastname'],
                 "email"               => $$user['email'],
-                "pw"                  => $$user['pw
-                '],
+                "pw"                  => $$user['pw'],
             ]);
         }
     }
