@@ -20,7 +20,7 @@ class OrdersTableSeeder extends Seeder
             $order = Order::create([
 
                 "name"              => $order['name'],
-                "surname"           => $order['surname'],
+                "lastname"           => $order['lastname'],
                 "pc"                => $order['pc'],
                 "address"           => $order['address'],
                 "phone"             => $order['phone'],
