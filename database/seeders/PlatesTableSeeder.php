@@ -1,0 +1,33 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Plate;
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+class PlatesTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+
+        foreach (config('plates') as $plate) {
+
+            $plate = Plate::create([
+
+                "name"              => $plate['name'],
+                "ingredients"       => $plate['ingredients'],
+                "price"             => $plate['price'],
+                "visibility"        => $plate['visibility'],
+                "restaurant_id"     => $plate['restaurant_id'],
+
+
+            ]);
+        }
+    }
+}
