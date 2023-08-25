@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('lastname', 15)->after('name')->default('lastname'); // TODO: CREARE CAMPO LASTNAME E RIMUOVERE DEFAULT
+            $table->string('lastname', 15)->after('name'); // TODO: CREARE CAMPO LASTNAME E RIMUOVERE DEFAULT
         });
     }
 
