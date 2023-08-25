@@ -1,7 +1,7 @@
 <?php
 return [
     [   //0
-        "name"      => "Trattoria del Buongusto",
+        "rest_name"      => "Trattoria del Buongusto",
         "address"   => "Corso Calatafimi, 26",
         "vat"       => "01765242501",
         "img"       => "trattoriadelbuongusto.png",
@@ -9,7 +9,7 @@ return [
 
     ],
     [
-        "name"      => "Osteria La Tradizione",
+        "rest_name"      => "Osteria La Tradizione",
         "address"   => "Via Paolo Perez, 12",
         "vat"       => "01765242502",
         "img"       => "latradizione.png",
@@ -17,7 +17,7 @@ return [
 
     ],
     [
-        "name"      => "Ristorante La Piazza",
+        "rest_name"      => "Ristorante La Piazza",
         "address"   => "P.za Indipendenza, 25",
         "vat"       => "01765242503",
         "img"       => "lapiazza.png",
@@ -25,7 +25,7 @@ return [
 
     ],
     [
-        "name"      => "Cucina Italiana da Marco",
+        "rest_name"      => "Cucina Italiana da Marco",
         "address"   => "Via Paolo Rubens, 8",
         "vat"       => "01765242504",
         "img"       => "damarco.png",
@@ -33,7 +33,7 @@ return [
 
     ],
     [
-        "name"      => "Sapori di Sicilia Trattoria",
+        "rest_name"      => "Sapori di Sicilia Trattoria",
         "address"   => "Via dei Nebrodi, 67",
         "vat"       => "01765242505",
         "img"       => "saporidisicilia.png",
@@ -41,7 +41,7 @@ return [
 
     ],
     [   //5
-        "name"      => "Yuki Sushi",
+        "rest_name"      => "Yuki Sushi",
         "address"   => "Via Pier Santi Mattarella, 90",
         "vat"       => "15745098238",
         "img"       => "yuki-sushi.png",
@@ -49,7 +49,7 @@ return [
 
     ],
     [
-        "name"      => "BriccoMatto - La bottega dell'Asia",
+        "rest_name"      => "BriccoMatto - La bottega dell'Asia",
         "address"   => "Corso dei Mille, 80",
         "vat"       => "25922458998",
         "img"       => "bricco-matto.png",
@@ -57,7 +57,7 @@ return [
 
     ],
     [
-        "name"      => "Jiajia - Ristorante Cinese",
+        "rest_name"      => "Jiajia - Ristorante Cinese",
         "address"   => "Piazza Verdi, 55",
         "vat"       => "32324987621",
         "img"       => "jia-jia.png",
@@ -65,7 +65,7 @@ return [
 
     ],
     [
-        "name"      => "Siam thai Food",
+        "rest_name"      => "Siam thai Food",
         "address"   => "via Carmelo Pardi, 64",
         "vat"       => "98436556687",
         "img"       => "thaifood.png",
@@ -73,7 +73,7 @@ return [
 
     ],
     [
-        "name"      => "Indo-Thai food",
+        "rest_name"      => "Indo-Thai food",
         "address"   => "Via Paternò, 30",
         "vat"       => "36664697429",
         "img"       => "indothaifood.png",
@@ -81,7 +81,7 @@ return [
 
     ],
     [
-        "name"      => "Hobento",
+        "rest_name"      => "Hobento",
         "address"   => "Via Libertà, 455",
         "vat"       => "10007543295",
         "img"       => "hobento.png",
@@ -89,7 +89,7 @@ return [
 
     ],
     [   //11
-        "name"      => "Pizzeria Mille Gusti",
+        "rest_name"      => "Pizzeria Mille Gusti",
         "address"   => "Via ciavolotto, 255/E",
         "vat"       => "14589785235",
         "img"       => "pizzeriamillegusti.png",
@@ -97,7 +97,7 @@ return [
 
     ],
     [
-        "name"      => "Mille Sapori",
+        "rest_name"      => "Mille Sapori",
         "address"   => "via Racalia, 150/A",
         "vat"       => "12589745896",
         "img"       => "millesapori.png",
@@ -106,7 +106,7 @@ return [
 
     ],
     [
-        "name"      => "NumberOne",
+        "rest_name"      => "NumberOne",
         "address"   => "Via Damusello, 137/E",
         "vat"       => "15784596324",
         "img"       => "numberone.png",
@@ -114,7 +114,7 @@ return [
 
     ],
     [   //14
-        "name"      => "Dolci Peccati",
+        "rest_name"      => "Dolci Peccati",
         "address"   => "Via Roma, 233",
         "vat"       => "12345678910",
         "img"       => "dolci-peccati.png",
@@ -124,7 +124,7 @@ return [
 
     ],
     [
-        "name"      => "Dolcemente",
+        "rest_name"      => "Dolcemente",
         "address"   => "Via Trieste, 54",
         "vat"       => "2345678901",
         "img"       => "dolcemente.png",
@@ -133,7 +133,7 @@ return [
 
     ],
     [
-        "name"      => "Sole di Sicilia",
+        "rest_name"      => "Sole di Sicilia",
         "address"   => "Via Verdi, 82",
         "vat"       => "3456789012",
         "img"       => "sole-di-sicilia.png",
@@ -141,7 +141,7 @@ return [
 
     ],
     [   //17
-        "name"      => "Misoshiro - Quasi solo Zuppe",
+        "rest_name"      => "Misoshiro - Quasi solo Zuppe",
         "address"   => "Piazza Unità d'Italia, 10",
         "vat"       => "26373325657",
         "img"       => "misoshiro.png",
@@ -149,7 +149,7 @@ return [
         //giapponese cinese
     ],
     [
-        "name"      => "Da Omar",
+        "rest_name"      => "Da Omar",
         "address"   => "Via Cala, 128",
         "vat"       => "00811114033",
         "img"       => "daomar.png",
@@ -157,7 +157,7 @@ return [
         //pollo kebab
     ],
     [
-        "name"      => "Castellana Pizze",
+        "rest_name"      => "Castellana Pizze",
         "address"   => "Via Castellana Bandiera, 6/A",
         "vat"       => "00437975539",
         "img"       => "pizzacastellana.png",
@@ -165,7 +165,7 @@ return [
         //pizza panini
     ],
     [
-        "name"      => "Palla di riso Tropicale",
+        "rest_name"      => "Palla di riso Tropicale",
         "address"   => "Via Nicolò Gallo, 1",
         "vat"       => "00671051036",
         "img"       => "palladiriso.png",
@@ -173,7 +173,7 @@ return [
         //poke
     ],
     [
-        "name"      => "Kung Pow",
+        "rest_name"      => "Kung Pow",
         "address"   => "Piazza Unità d'Italia, 10",
         "vat"       => "0018333416",
         "img"       => "kungpow.png",
@@ -181,7 +181,7 @@ return [
         //giapponese pollo
     ],
     [
-        "name"      => "Samir e Gennaro",
+        "rest_name"      => "Samir e Gennaro",
         "address"   => "Via Sammartino, 14",
         "vat"       => "00971860344",
         "img"       => "samir.png",
@@ -189,7 +189,7 @@ return [
         //kebab pizza
     ],
     [
-        "name"      => "Riso Zen",
+        "rest_name"      => "Riso Zen",
         "address"   => "Via Roma, 205",
         "vat"       => "00142650185",
         "img"       => "risozen.png",
@@ -197,7 +197,7 @@ return [
         //poke cinese
     ],
     [
-        "name"      => "Da Totò",
+        "rest_name"      => "Da Totò",
         "address"   => "Via Giuseppe Pagano, 54",
         "vat"       => "00509106929",
         "img"       => "datoto.png",

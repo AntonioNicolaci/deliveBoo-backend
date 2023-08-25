@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('ingredients');
-            $table->tinyInteger('price');
+            $table->smallInteger('price');
             $table->boolean('visibility');
             $table->smallInteger('restaurant_id');
             $table->timestamps();

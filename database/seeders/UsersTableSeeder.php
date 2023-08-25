@@ -17,12 +17,12 @@ class UsersTableSeeder extends Seeder
     {
         foreach (config('users') as $user) {
 
-            $$user = User::create([
+            $user = User::create([
 
-                "name"                => $$user['name'],
-                "lastname"            => $$user['lastname'],
-                "email"               => $$user['email'],
-                "pw"                  => $$user['pw'],
+                "name"                => $user['name'],
+                "lastname"            => $user['lastname'],
+                "email"               => $user['email'],
+                "password"            => $user['password'],
             ]);
         }
     }

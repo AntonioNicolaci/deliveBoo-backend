@@ -19,7 +19,7 @@ class RestaurantsTableSeeder extends Seeder
 
             $restaurant = Restaurant::create([
 
-                "name"               => $restaurant['name'],
+                "name"               => $restaurant['rest_name'],
                 "address"            => $restaurant['address'],
                 "vat"                => $restaurant['vat'],
                 "img"                => $restaurant['img'],
