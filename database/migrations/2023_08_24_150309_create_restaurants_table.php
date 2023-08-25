@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('address');
             $table->string('vat')->unique();
             $table->string('img')->nullable();
-            $table->timestamps();
         });
     }
 

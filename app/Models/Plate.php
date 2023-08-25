@@ -9,6 +9,8 @@ class Plate extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function restaurants()
     {
         return $this->belongsTo(Restaurant::class);
