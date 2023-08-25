@@ -9,6 +9,8 @@ class Type extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function restaurants()
     {
         return $this->belongsToMany('App/Models/Restaurant');

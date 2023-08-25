@@ -20,7 +20,6 @@ return new class extends Migration
             $table->smallInteger('price');
             $table->boolean('visibility');
             $table->smallInteger('restaurant_id');
-            $table->timestamps();
         });
     }
 
