@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Restaurant;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +13,6 @@ class Type extends Model
 
     public function restaurants()
     {
-        return $this->belongsToMany('App/Models/Restaurant');
+        return $this->belongsToMany(Restaurant::class);
     }
 }
