@@ -1,7 +1,9 @@
-@import '~bootstrap/scss/bootstrap';
 @import './palette.scss';
+
+@import '~bootstrap/scss/bootstrap';
 body{
     background-color: $palette-bianco-scuro;
 };
 
-@import 'partials/button.scss';
+@import 'partials/button';
+@import 'partials/_login';
