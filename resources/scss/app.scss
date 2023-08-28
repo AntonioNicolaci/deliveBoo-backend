@@ -10,3 +10,5 @@ $palette-nero: #37363d;
 body {
     background-color: $palette-bianco-scuro;
 }
+
+@import "partials/button.scss";

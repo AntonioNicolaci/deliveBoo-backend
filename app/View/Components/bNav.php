@@ -4,23 +4,21 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class button extends Component
-{/**
-     * The alert type.
-     *
-     * @var string
-     */
-    public $text;
- 
+class bNav extends Component
+{
     /**
-     * Create the component instance.
+     * Create a new component instance.
      *
-     * @param  string  $text
      * @return void
      */
-    public function __construct($text)
+    
+    public $text;
+    public $routeUrl;
+    
+    public function __construct($text, $routeUrl)
     {
         $this->text = $text;
+        $this->routeUrl = $routeUrl;
     }
 
     /**
@@ -30,6 +28,6 @@ class button extends Component
      */
     public function render()
     {
-        return view('components.button');
+        return view('components.b-nav');
     }
 }

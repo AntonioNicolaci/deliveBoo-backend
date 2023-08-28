@@ -1,8 +1,14 @@
-.btn-style {
+@import '../palette.scss';
+
+.btnStyle {
     text-decoration: none;
-    color: #37363c;
-    border: 1px solid #37363c;
+    color: $palette-nero;
+    border: 1px solid $palette-nero;
     border-radius: 0.8rem;
     padding: 0.4rem 1rem;
-    background-color: #f9f7ed;
+    background-color: $palette-bianco-chiaro;
+    & > a {
+        text-decoration: none;
+        color: $palette-nero;
+    }
 }

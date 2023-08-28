@@ -38,49 +38,31 @@
                         @guest
                             @if (!Route::is('login') && !Route::is('register'))
                             <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">
-                                        Registrati
-                                        {{-- <x-button-nav :message="Accedi"> --}}
-                                    </a>
+                                    <x-b-nav text="Registrati" :routeUrl="route('register')"/>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">
-                                        Login
-                                        {{-- <x-buttonNav :message="Registrati"> --}}
-                                    </a>
+                                    <x-b-nav text="Accedi" :routeUrl="route('login')"/>
                                 </li>
                             @endif
                             @if (Route::is('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">
-                                        Registrati
-                                        {{-- <x-button-nav :message="Accedi"> --}}
-                                    </a>
+                                    <x-b-nav text="Registrati" :routeUrl="route('register')"/>
                                 </li>
                             @endif
                             @if (Route::is('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">
-                                        Login
-                                        {{-- <x-buttonNav :message="Registrati"> --}}
-                                    </a>
+                                    <x-b-nav text="Accedi" :routeUrl="route('login')"/>
                                 </li>
                             @endif
                         @endguest
                         @auth
                             @if (Route::is('myfoords'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('MyOrders') }}">
-                                        Ordini
-                                        {{-- <x-buttonNav :message="Ordini"> --}}
-                                    </a>
+                                    <x-b-nav text="Ordini" :routeUrl="route('myorders')"/>
                                 </li>
                             @elseif (Route::is('myorders'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('MyFoods') }}">
-                                        Piatti
-                                        {{-- <x-buttonNav :message="Piatti"> --}}
-                                    </a>
+                                    <x-b-nav text="HPiatti" :routeUrl="route('myfoods')"/>
                                 </li>
                             @endif
                             <li class="nav-item dropdown">
@@ -103,12 +85,10 @@
                         </li>
                         @endauth
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">
-                                Homepage
-                                {{-- <x-buttonNav :message="Homepage"> --}}
-                            </a>
+                            {{--<a class="nav-link" href="{{ url('/') }}"> --}}
+                                <x-b-nav text="Homepage" :routeUrl="url('/')"/>
+                            {{--</a>--}}
                         </li>
-                        
                     </ul>
                 </div>
             </div>
