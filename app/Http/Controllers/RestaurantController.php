@@ -34,7 +34,7 @@ class RestaurantController extends Controller
 
         $restaurants = Restaurant::with('user')->where('user_id', Auth::id())->get();
 
-        return view('dashboard', compact('restaurants', 'users'));
+        return view('dashboard', compact('restaurants'));
     }
 
     public function create()

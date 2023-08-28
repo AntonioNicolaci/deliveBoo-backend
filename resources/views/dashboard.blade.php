@@ -6,12 +6,28 @@
         {{ __('Dashboard') }}
     </h2>
     <div class="row justify-content-center">
-            
+
+     
         @foreach ($restaurants as $restaurant)
-             {{ $restaurant->rest_name }}
-        <!-- Altri dettagli del ristorante possono essere visualizzati qui -->
+             <div>
+                Nome attività: {{ $restaurant->rest_name }}
+             </div>
+             <div>
+                P.IVA: {{ $restaurant->vat }}
+             </div>
+             <div>
+                Indirizzo: {{ $restaurant->address}}
+             </div>
+             <img src={{Vite::asset("resources/img/$restaurant->img")}} alt="">
+
+        
         @endforeach
-            
+        
+    </div>
+    <div>
+        @foreach ($plates as $plate)
+        {{$plate->name}}
+        @endforeach
     </div>
 </div>
 @endsection
