@@ -30,7 +30,7 @@
 
     <div class="d-flex">
         <h5>Crea un nuovo piatto</h5>
-        <a class="btn btn primary" href="{{ route('plates.create') }}">Crea</a>
+        <a class="btn btn-primary" href="{{ route('plates.create') }}">Crea</a>
     </div>
 
 
