@@ -6,21 +6,28 @@
         {{ __('Dashboard') }}
     </h2>
     <div class="row justify-content-center">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">{{ __('User Dashboard') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
+     
+        @foreach ($restaurants as $restaurant)
+             <div>
+                Nome attività: {{ $restaurant->rest_name }}
+             </div>
+             <div>
+                P.IVA: {{ $restaurant->vat }}
+             </div>
+             <div>
+                Indirizzo: {{ $restaurant->address}}
+             </div>
+             <img src={{Vite::asset("resources/img/$restaurant->img")}} alt="">
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+        
+        @endforeach
+        
+    </div>
+    <div>
+        @foreach ($plates as $plate)
+        {{$plate->name}}
+        @endforeach
     </div>
 </div>
 @endsection
