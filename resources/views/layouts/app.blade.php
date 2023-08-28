@@ -21,8 +21,6 @@
 
 <body>
     <div id="app">
-
-
         <nav class="navbar navbar-expand-sm navbar-light shadow-sm justify-content-center p-0">
             <div class="container p-0">
                 <div class="navbar-brand m-0 p-0">
