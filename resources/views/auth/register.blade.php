@@ -75,6 +75,38 @@
                             </div>
                         </div>
 
+                        <div class="mb-4 row">
+                            <label for="rest_name" class="col-md-4 col-form-label text-md-right">Nome Attività</label>
+
+                            <div class="col-md-6">
+                                <input id="rest_name" type="text" class="form-control" name="rest_name" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label for="address" class="col-md-4 col-form-label text-md-right">Indirizzo</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control" name="address" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label for="vat" class="col-md-4 col-form-label text-md-right">P.IVA</label>
+
+                            <div class="col-md-6">
+                                <input id="vat" type="text" class="form-control" name="vat" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label for="img" class="col-md-4 col-form-label text-md-right">Aggiungi L'Immaigne</label>
+
+                            <div class="col-md-6">
+                                <input id="img" type="text" class="form-control" name="img">
+                            </div>
+                        </div>
+
                         <div class="mb-4 row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
