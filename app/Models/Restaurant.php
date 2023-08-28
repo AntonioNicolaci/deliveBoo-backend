@@ -12,6 +12,14 @@ class Restaurant extends Model
     use HasFactory;
 
     public $timestamps = false;
+    
+    protected $fillable = [
+        'rest_name',
+        'address',
+        'vat',
+        'img',
+        'user_id',
+      ];
 
     public function user()
     {
