@@ -19,10 +19,6 @@
 
                     {{ __('You are logged in!') }}
                 </div>
-
-                <div>
-                    {{ $restaurant->rest_name }}
-                </div>
             </div>
         </div>
     </div>
