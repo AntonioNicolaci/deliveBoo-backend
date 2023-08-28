@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 
+use App\View\Components\bNav;
 use App\View\Components\buttonNav;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -26,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::component('button-nav', buttonNav::class);
+        Blade::component('b-nav', bNav::class);
     }
 }
