@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('rest_name', 50);
             $table->string('address', 50);
             $table->bigInteger('vat')->unique();
-            $table->string('img');
+            $table->string('img', 150)->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
         });
     }
 
