@@ -36,6 +36,20 @@
                     <ul class="navbar-nav ml-auto">
                         {{-- Authentication Links --}}
                         @guest
+                            @if (!Route::is('login') && !Route::is('register'))
+                            <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">
+                                        Registrati
+                                        {{-- <x-button-nav :message="Accedi"> --}}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">
+                                        Login
+                                        {{-- <x-buttonNav :message="Registrati"> --}}
+                                    </a>
+                                </li>
+                            @endif
                             @if (Route::is('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">
@@ -89,7 +103,7 @@
                         </li>
                         @endauth
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('dashboard') }}">
+                            <a class="nav-link" href="{{ url('/') }}">
                                 Homepage
                                 {{-- <x-buttonNav :message="Homepage"> --}}
                             </a>
