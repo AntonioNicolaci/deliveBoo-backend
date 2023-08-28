@@ -29,7 +29,6 @@
     <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Ingredienti</th>
             <th scope="col">Prezzo</th>
@@ -40,7 +39,6 @@
 
             @foreach ($plates as $plate)
             <tr>
-                <th scope="row">{{$plate->id}}</th>
                 <td>{{$plate->name}}</td>
                 <td>{{$plate->ingredients}}</td>
                 <td>{{$plate->price}}</td>
