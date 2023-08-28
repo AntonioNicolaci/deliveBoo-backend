@@ -26,7 +26,9 @@
     </div>
     <div>
         @foreach ($plates as $plate)
-        {{$plate->name}}
+        <div>
+            {{$plate->name}}
+        </div>
         @endforeach
     </div>
 </div>
