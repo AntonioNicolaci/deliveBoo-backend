@@ -54,13 +54,13 @@
                             @endif
                         @endguest
                         @auth
-                            @if (Route::is('myfoords'))
+                            @if (Route::is('myfoods'))
                                 <li class="nav-item">
                                     <x-b-nav text="Ordini" :routeUrl="route('myorders')"/>
                                 </li>
                             @elseif (Route::is('myorders'))
                                 <li class="nav-item">
-                                    <x-b-nav text="HPiatti" :routeUrl="route('myfoods')"/>
+                                    <x-b-nav text="Piatti" :routeUrl="route('myfoods')"/>
                                 </li>
                             @endif
                             <li class="nav-item dropdown">
@@ -70,7 +70,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ url('dashboard') }}">{{__('Dashboard')}}</a>
-                                <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
+                                {{-- <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a> --}}
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
