@@ -105,7 +105,7 @@ return [
         //11  
         "user_id"   => 12,
         "rest_name" => "Pizzeria Mille Gusti",
-        "address"   => "Via ciavolotto, 255/E",
+        "address"   => "Via Ciavolotto, 255/E",
         "vat"       => "14589785235",
         "img"       => "pizzeriamillegusti.png",
 
