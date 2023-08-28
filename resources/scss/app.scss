@@ -1,14 +1,9 @@
-@import "~bootstrap/scss/bootstrap";
+@import './palette.scss';
+@import '~bootstrap/scss/bootstrap';
 
-$palette-giallo-chiaro: #faba5c;
-$palette-giallo-scuro: #f2a23a;
-$palette-bianco-chiaro: #f9f7ed;
-$palette-bianco-scuro: #e7e0d6;
-$palette-marrone: #9f672e;
-$palette-nero: #37363d;
-
-body {
+body{
     background-color: $palette-bianco-scuro;
 }
 
-@import "partials/button.scss";
+@import 'partials/button.scss';
+@import 'partials/_login.scss';

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('rest_name', 50);
             $table->string('address', 50);
-            $table->bigInteger('vat')->unique();
+            $table->string('vat', 11)->unique();
             $table->string('img', 150)->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
         });
