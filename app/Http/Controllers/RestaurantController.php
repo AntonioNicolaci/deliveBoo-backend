@@ -40,7 +40,7 @@ class RestaurantController extends Controller
 
     public function create()
     {
-        //
+        return view('plates.create');
     }
 
     public function store(Request $request)

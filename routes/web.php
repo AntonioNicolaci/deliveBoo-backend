@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PlateController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestaurantController;
 
@@ -31,6 +32,10 @@ Route::get('/dashboard', function () {
 // });
 
 Route::resource('/dashboard', RestaurantController::class);
+Route::get('/plates/create', [PlateController::class, 'create'])->name('plates.create');
+Route::post('/plates', [PlateController::class, 'store'])->name('plates.store'); //per l'archiviazione dei dati del piatto
+
+
 
 
 require __DIR__ . '/auth.php';
