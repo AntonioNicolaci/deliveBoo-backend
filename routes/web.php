@@ -35,6 +35,7 @@ Route::resource('/dashboard', RestaurantController::class);
 Route::get('/plates/create', [PlateController::class, 'create'])->name('plates.create');
 Route::post('/plates', [PlateController::class, 'store'])->name('plates.store'); //per l'archiviazione dei dati del piatto
 
+Route::delete('/plates/{plate}', [PlateController::class, 'destroy'])->name('plates.destroy');
 
 
 
