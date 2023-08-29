@@ -20,11 +20,11 @@ class RestaurantController extends Controller
 
         foreach ($user->restaurants as $restaurant) {
             $restaurantsData[] = [
-                'name' => $restaurant->rest_name,
+                'name'    => $restaurant->rest_name,
                 'user_id' => $restaurant->user_id,
                 'address' => $restaurant->address,
-                'vat' => $restaurant->vat,
-                'img' => $restaurant->img,
+                'vat'     => $restaurant->vat,
+                'img'     => $restaurant->img,
             ];
         }
 
@@ -36,10 +36,10 @@ class RestaurantController extends Controller
         $users = User::all();
         $plates = Plate::with('restaurant')->where('restaurant_id', Auth::id())->get();
         $types = DB::table('restaurants')->join('restaurant_type', 'restaurants.id', '=', 'restaurant_type.restaurant_id')
-                                         ->join('types', 'restaurant_type.type_id', '=', 'types.id')
-                                         ->where('restaurants.id', Auth::id())
-                                         ->select('types.name')
-                                         ->get();
+            ->join('types', 'restaurant_type.type_id', '=', 'types.id')
+            ->where('restaurants.id', Auth::id())
+            ->select('types.name')
+            ->get();
         $restaurants = Restaurant::with('user')->where('user_id', Auth::id())->get();
 
         return view('dashboard', compact('restaurants', 'plates', 'types'));

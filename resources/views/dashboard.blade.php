@@ -17,7 +17,7 @@
               Indirizzo: {{ $restaurant->address}}
             </div>
           @foreach ($types as $type)
-           <span>{{$type->name}}</span>
+           <span> Tipo: {{$type->name}}</span>
           @endforeach        
         </div>
         <img class="w-25" src={{Vite::asset("resources/img/$restaurant->img")}} alt="">
@@ -29,6 +29,8 @@
     <div class="d-flex">
         <h5>Crea un nuovo piatto</h5>
         <a class="btn btn-primary" href="{{ route('plates.create') }}">Crea</a>
+        
+        
     </div>
 
 
@@ -39,20 +41,28 @@
             <th scope="col">Ingredienti</th>
             <th scope="col">Prezzo</th>
             <th scope="col">Visibile</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
 
             @foreach ($plates as $plate)
-            <tr>
+              <tr>
                 <td>{{$plate->name}}</td>
                 <td>{{$plate->ingredients}}</td>
                 <td>€ {{number_format($plate->price/100, 2, ',', '')}}</td>
                 <td>{{$plate->visibility ? 'Sì' : 'No'}}</td>
+                <td>
+                  <form action="{{ route('plates.destroy', ['plate' => $plate->id]) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Elimina</button>
+                  </form>
+                </td>
               </tr>
             @endforeach
-
-        </tbody>
+          </tbody>
       </table>
 </div>
 @endsection
+
