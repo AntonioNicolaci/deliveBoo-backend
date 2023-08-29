@@ -5,27 +5,20 @@
    
 
     <div class="d-flex justify-content-around p-3">
-
-     
-        @foreach ($restaurants as $restaurant)
+      @foreach ($restaurants as $restaurant)
         <div>
-          <div>
-            Nome attività: {{ $restaurant->rest_name }}
-         </div>
-         <div>
-            P.IVA: {{ $restaurant->vat }}
-         </div>
-         <div>
-            Indirizzo: {{ $restaurant->address}}
-         </div>
+            <div>
+              Nome attività: {{ $restaurant->rest_name }}
+            </div>
+            <div>
+              P.IVA: {{ $restaurant->vat }}
+            </div>
+            <div>
+              Indirizzo: {{ $restaurant->address}}
+            </div>
         </div>
-          <img class="w-25" src={{Vite::asset("resources/img/$restaurant->img")}} alt="">
-             
-             
-
-        
-        @endforeach
-        
+        <img class="w-25" src={{Vite::asset("resources/img/$restaurant->img")}} alt="">
+      @endforeach
     </div>
 
     <h1>I Tuoi Piatti</h1>
