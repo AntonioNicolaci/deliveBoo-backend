@@ -7,6 +7,7 @@ return [
         "address"   => "Corso Calatafimi, 26",
         "vat"       => "01765242501",
         "img"       => "trattoriadelbuongusto.png",
+        "types"     => [2, 1],
 
 
     ],
@@ -16,6 +17,7 @@ return [
         "address"   => "Via Paolo Perez, 12",
         "vat"       => "01765242502",
         "img"       => "latradizione.png",
+        "types"     => [2],
 
 
     ],
@@ -25,6 +27,7 @@ return [
         "address"   => "P.za Indipendenza, 25",
         "vat"       => "01765242503",
         "img"       => "lapiazza.png",
+        "types"     => [2, 1],
 
 
     ],
@@ -34,6 +37,7 @@ return [
         "address"   => "Via Paolo Rubens, 8",
         "vat"       => "01765242504",
         "img"       => "damarco.png",
+        "types"     => [2],
 
 
     ],
@@ -43,6 +47,7 @@ return [
         "address"   => "Via dei Nebrodi, 67",
         "vat"       => "01765242505",
         "img"       => "saporidisicilia.png",
+        "types"     => [2],
 
 
     ],
@@ -53,6 +58,7 @@ return [
         "address"   => "Via Pier Santi Mattarella, 90",
         "vat"       => "15745098238",
         "img"       => "yuki-sushi.png",
+        "types"     => [4],
 
 
     ],
@@ -62,6 +68,7 @@ return [
         "address"   => "Corso dei Mille, 80",
         "vat"       => "25922458998",
         "img"       => "bricco-matto.png",
+        "types"     => [5, 4],
 
 
     ],
@@ -71,6 +78,7 @@ return [
         "address"   => "Piazza Verdi, 55",
         "vat"       => "32324987621",
         "img"       => "jia-jia.png",
+        "types"     => [5],
 
 
     ],
@@ -80,6 +88,7 @@ return [
         "address"   => "via Carmelo Pardi, 64",
         "vat"       => "98436556687",
         "img"       => "thaifood.png",
+        "types"     => [8],
 
 
     ],
@@ -89,6 +98,7 @@ return [
         "address"   => "Via Paternò, 30",
         "vat"       => "36664697429",
         "img"       => "indothaifood.png",
+        "types"     => [6, 8],
 
 
     ],
@@ -98,6 +108,7 @@ return [
         "address"   => "Via Libertà, 455",
         "vat"       => "10007543295",
         "img"       => "hobento.png",
+        "types"     => [7, 4],
 
 
     ],
@@ -108,6 +119,7 @@ return [
         "address"   => "Via ciavolotto, 255/E",
         "vat"       => "14589785235",
         "img"       => "pizzeriamillegusti.png",
+        "types"     => [1],
 
 
     ],
@@ -117,6 +129,7 @@ return [
         "address"   => "via Racalia, 150/A",
         "vat"       => "12589745896",
         "img"       => "millesapori.png",
+        "types"     => [1],
 
 
 
@@ -127,6 +140,7 @@ return [
         "address"   => "Via Damusello, 137/E",
         "vat"       => "15784596324",
         "img"       => "numberone.png",
+        "types"     => [1],
 
 
     ],
@@ -137,6 +151,7 @@ return [
         "address"   => "Via Roma, 233",
         "vat"       => "12345678910",
         "img"       => "dolci-peccati.png",
+        "types"     => [3],
 
 
 
@@ -148,6 +163,7 @@ return [
         "address"   => "Via Trieste, 54",
         "vat"       => "2345678901",
         "img"       => "dolcemente.png",
+        "types"     => [3],
 
 
 
@@ -158,6 +174,7 @@ return [
         "address"   => "Via Verdi, 82",
         "vat"       => "3456789012",
         "img"       => "sole-di-sicilia.png",
+        "types"     => [3],
 
 
     ],
@@ -168,6 +185,7 @@ return [
         "address"   => "Piazza Unità d'Italia, 10",
         "vat"       => "26373325657",
         "img"       => "misoshiro.png",
+        "types"     => [4, 5],
 
         //giapponese cinese
     ],
@@ -177,6 +195,7 @@ return [
         "address"   => "Via Cala, 128",
         "vat"       => "81111403300",
         "img"       => "daomar.png",
+        "types"     => [9, 10],
 
         //pollo kebab
     ],
@@ -186,6 +205,7 @@ return [
         "address"   => "Via Castellana Bandiera, 6/A",
         "vat"       => "43797553900",
         "img"       => "pizzacastellana.png",
+        "types"     => [11, 1],
 
         //pizza panini
     ],
@@ -195,6 +215,7 @@ return [
         "address"   => "Via Nicolò Gallo, 1",
         "vat"       => "00671051036",
         "img"       => "palladiriso.png",
+        "types"     => [12],
 
         //poke
     ],
@@ -204,6 +225,7 @@ return [
         "address"   => "Piazza Unità d'Italia, 10",
         "vat"       => "0018333416",
         "img"       => "kungpow.png",
+        "types"     => [4, 9],
 
         //giapponese pollo
     ],
@@ -213,6 +235,7 @@ return [
         "address"   => "Via Sammartino, 14",
         "vat"       => "00971860344",
         "img"       => "samir.png",
+        "types"     => [10, 1],
 
         //kebab pizza
     ],
@@ -222,6 +245,7 @@ return [
         "address"   => "Via Roma, 205",
         "vat"       => "00142650185",
         "img"       => "risozen.png",
+        "types"     => [12, 5],
 
         //poke cinese
     ],
@@ -231,6 +255,7 @@ return [
         "address"   => "Via Giuseppe Pagano, 54",
         "vat"       => "00509106929",
         "img"       => "datoto.png",
+        "types"     => [13],
 
         //fritti
     ]

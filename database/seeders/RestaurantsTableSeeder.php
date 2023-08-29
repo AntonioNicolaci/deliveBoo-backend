@@ -18,7 +18,18 @@ class RestaurantsTableSeeder extends Seeder
 
         foreach (config('restaurants') as $restaurant) {
             //creare riga nel DB
-            Restaurant::create($restaurant);
+            $restaurants = Restaurant::create([
+
+                "user_id"   => $restaurant['user_id'],
+                "rest_name" => $restaurant['rest_name'],
+                "address"   => $restaurant['address'],
+                "vat"       => $restaurant['vat'],
+                "img"       => $restaurant['img'],
+
+
+            ]);
+
+            $restaurants->types()->sync($restaurant['types']);
         }
     }
 }

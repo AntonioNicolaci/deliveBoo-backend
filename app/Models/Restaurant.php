@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Type;
 use App\Models\User;
 use App\Models\Plate;
 use Illuminate\Database\Eloquent\Model;
@@ -30,5 +31,10 @@ class Restaurant extends Model
     public function plates()
     {
         return $this->hasMany(Plate::class);
+    }
+
+    public function types()
+    {
+        return $this->belongsToMany(Type::class);
     }
 }
