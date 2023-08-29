@@ -2,24 +2,26 @@
 
 @section('content')
 <div class="container">
-    <h2 class="fs-4 text-secondary my-4">
-        {{ __('Dashboard') }}
-    </h2>
+   
 
-    <div class="row justify-content-center">
+    <div class="d-flex justify-content-around p-3">
 
      
         @foreach ($restaurants as $restaurant)
-             <div>
-                Nome attività: {{ $restaurant->rest_name }}
-             </div>
-             <div>
-                P.IVA: {{ $restaurant->vat }}
-             </div>
-             <div>
-                Indirizzo: {{ $restaurant->address}}
-             </div>
-             <img src={{Vite::asset("resources/img/$restaurant->img")}} alt="">
+        <div>
+          <div>
+            Nome attività: {{ $restaurant->rest_name }}
+         </div>
+         <div>
+            P.IVA: {{ $restaurant->vat }}
+         </div>
+         <div>
+            Indirizzo: {{ $restaurant->address}}
+         </div>
+        </div>
+          <img class="w-25" src={{Vite::asset("resources/img/$restaurant->img")}} alt="">
+             
+             
 
         
         @endforeach
