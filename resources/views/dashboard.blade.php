@@ -16,6 +16,9 @@
             <div>
               Indirizzo: {{ $restaurant->address}}
             </div>
+          @foreach ($types as $type)
+           <span>{{$type->name}}</span>
+          @endforeach        
         </div>
         <img class="w-25" src={{Vite::asset("resources/img/$restaurant->img")}} alt="">
       @endforeach
@@ -51,6 +54,5 @@
 
         </tbody>
       </table>
-
 </div>
 @endsection
