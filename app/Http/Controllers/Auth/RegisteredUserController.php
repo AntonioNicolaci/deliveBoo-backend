@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Type;
 use App\Models\User;
 use Illuminate\View\View;
 use App\Models\Restaurant;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
+use App\Http\Controllers\TypeController;
 
 class RegisteredUserController extends Controller
 {
@@ -22,7 +24,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        $types = Type::all();
+        return view('auth.register')->with('types', $types);
     }
 
     /**
@@ -39,8 +42,9 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'rest_name' => ['required', 'string', 'max:50'],
             'address' => ['required', 'string', 'max:50'],
-            'vat' => ['required', 'string', 'max:11', 'unique:'.Restaurant::class],
+            'vat' => ['required', 'string', 'max:11', 'min:11', 'unique:'.Restaurant::class],
             'img' => ['nullable', 'string', 'max:150'],
+            'types' => ['min:1']
         ]);
 
         $user = User::create([
@@ -56,6 +60,8 @@ class RegisteredUserController extends Controller
             'img' => $request->img,
             'user_id' => $user->id,
         ]);
+
+        $restaurant->types()->sync($request["types"]);
 
         event(new Registered($user));
 
