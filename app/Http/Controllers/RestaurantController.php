@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Type;
 use App\Models\User;
 use App\Models\Plate;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
@@ -33,9 +35,14 @@ class RestaurantController extends Controller
     {
         $users = User::all();
         $plates = Plate::with('restaurant')->where('restaurant_id', Auth::id())->get();
+        $types = DB::table('restaurants')->join('restaurant_type', 'restaurants.id', '=', 'restaurant_type.restaurant_id')
+                                         ->join('types', 'restaurant_type.type_id', '=', 'types.id')
+                                         ->where('restaurants.id', Auth::id())
+                                         ->select('types.name')
+                                         ->get();
         $restaurants = Restaurant::with('user')->where('user_id', Auth::id())->get();
 
-        return view('dashboard', compact('restaurants', 'plates'));
+        return view('dashboard', compact('restaurants', 'plates', 'types'));
     }
 
     public function create()
