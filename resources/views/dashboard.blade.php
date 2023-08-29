@@ -42,7 +42,7 @@
             <th scope="col">Nome</th>
             <th scope="col">Ingredienti</th>
             <th scope="col">Prezzo</th>
-            <th scope="col">Visibilità</th>
+            <th scope="col">Visibile</th>
           </tr>
         </thead>
         <tbody>
@@ -51,7 +51,7 @@
             <tr>
                 <td>{{$plate->name}}</td>
                 <td>{{$plate->ingredients}}</td>
-                <td>{{$plate->price}}</td>
+                <td>€ {{number_format($plate->price/100, 2, ',', '')}}</td>
                 <td>{{$plate->visibility ? 'Sì' : 'No'}}</td>
               </tr>
             @endforeach
