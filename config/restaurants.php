@@ -8,8 +8,6 @@ return [
         "vat"       => "01765242501",
         "img"       => "trattoriadelbuongusto.png",
         "types"     => [2, 1],
-
-
     ],
     [
         "user_id"   => 2,
@@ -18,8 +16,6 @@ return [
         "vat"       => "01765242502",
         "img"       => "latradizione.png",
         "types"     => [2],
-
-
     ],
     [
         "user_id"   => 3,
@@ -28,8 +24,6 @@ return [
         "vat"       => "01765242503",
         "img"       => "lapiazza.png",
         "types"     => [2, 1],
-
-
     ],
     [
         "user_id"   => 4,
@@ -38,8 +32,6 @@ return [
         "vat"       => "01765242504",
         "img"       => "damarco.png",
         "types"     => [2],
-
-
     ],
     [
         "user_id"   => 5,
@@ -48,8 +40,6 @@ return [
         "vat"       => "01765242505",
         "img"       => "saporidisicilia.png",
         "types"     => [2],
-
-
     ],
     [
         //5  
@@ -59,8 +49,6 @@ return [
         "vat"       => "15745098238",
         "img"       => "yuki-sushi.png",
         "types"     => [4],
-
-
     ],
     [
         "user_id"   => 7,
@@ -69,8 +57,6 @@ return [
         "vat"       => "25922458998",
         "img"       => "bricco-matto.png",
         "types"     => [5, 4],
-
-
     ],
     [
         "user_id"   => 8,
@@ -79,8 +65,6 @@ return [
         "vat"       => "32324987621",
         "img"       => "jia-jia.png",
         "types"     => [5],
-
-
     ],
     [
         "user_id"   => 9,
@@ -89,8 +73,6 @@ return [
         "vat"       => "98436556687",
         "img"       => "thaifood.png",
         "types"     => [8],
-
-
     ],
     [
         "user_id"   => 10,
@@ -99,8 +81,6 @@ return [
         "vat"       => "36664697429",
         "img"       => "indothaifood.png",
         "types"     => [6, 8],
-
-
     ],
     [
         "user_id"   => 11,
@@ -109,8 +89,6 @@ return [
         "vat"       => "10007543295",
         "img"       => "hobento.png",
         "types"     => [7, 4],
-
-
     ],
     [
         //11  
@@ -120,8 +98,6 @@ return [
         "vat"       => "14589785235",
         "img"       => "pizzeriamillegusti.png",
         "types"     => [1],
-
-
     ],
     [
         "user_id"   => 13,
@@ -130,9 +106,6 @@ return [
         "vat"       => "12589745896",
         "img"       => "millesapori.png",
         "types"     => [1],
-
-
-
     ],
     [
         "user_id"   => 14,
@@ -141,8 +114,6 @@ return [
         "vat"       => "15784596324",
         "img"       => "numberone.png",
         "types"     => [1],
-
-
     ],
     [
         //14
@@ -152,10 +123,6 @@ return [
         "vat"       => "12345678910",
         "img"       => "dolci-peccati.png",
         "types"     => [3],
-
-
-
-
     ],
     [
         "user_id"   => 16,
@@ -164,9 +131,6 @@ return [
         "vat"       => "2345678901",
         "img"       => "dolcemente.png",
         "types"     => [3],
-
-
-
     ],
     [
         "user_id"   => 17,
@@ -175,8 +139,6 @@ return [
         "vat"       => "3456789012",
         "img"       => "sole-di-sicilia.png",
         "types"     => [3],
-
-
     ],
     [
         //17
@@ -186,8 +148,6 @@ return [
         "vat"       => "26373325657",
         "img"       => "misoshiro.png",
         "types"     => [4, 5],
-
-        //giapponese cinese
     ],
     [
         "user_id"   => 19,
@@ -196,8 +156,6 @@ return [
         "vat"       => "81111403300",
         "img"       => "daomar.png",
         "types"     => [9, 10],
-
-        //pollo kebab
     ],
     [
         "user_id"   => 20,
@@ -206,8 +164,6 @@ return [
         "vat"       => "43797553900",
         "img"       => "pizzacastellana.png",
         "types"     => [11, 1],
-
-        //pizza panini
     ],
     [
         "user_id"   => 21,
@@ -216,8 +172,6 @@ return [
         "vat"       => "00671051036",
         "img"       => "palladiriso.png",
         "types"     => [12],
-
-        //poke
     ],
     [
         "user_id"   => 22,
@@ -226,8 +180,6 @@ return [
         "vat"       => "0018333416",
         "img"       => "kungpow.png",
         "types"     => [4, 9],
-
-        //giapponese pollo
     ],
     [
         "user_id"   => 23,
@@ -236,8 +188,6 @@ return [
         "vat"       => "00971860344",
         "img"       => "samir.png",
         "types"     => [10, 1],
-
-        //kebab pizza
     ],
     [
         "user_id"   => 24,
@@ -246,8 +196,6 @@ return [
         "vat"       => "00142650185",
         "img"       => "risozen.png",
         "types"     => [12, 5],
-
-        //poke cinese
     ],
     [
         "user_id"   => 25,
@@ -256,7 +204,5 @@ return [
         "vat"       => "00509106929",
         "img"       => "datoto.png",
         "types"     => [13],
-
-        //fritti
     ]
 ];
