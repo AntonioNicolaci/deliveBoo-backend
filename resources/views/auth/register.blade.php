@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+               -webkit-appearance: none;
+                margin: 0;
+        }
+ 
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -8,7 +19,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" onsubmit="formCont()" id="registerForm">
                         @csrf
 
                         <div class="mb-4 row">
@@ -16,7 +27,9 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <div class="invalid-feedback" role="alert" id="nameAler">
 
+                                </div>
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -95,7 +108,7 @@
                             <label for="vat" class="col-md-4 col-form-label text-md-right">P.IVA</label>
 
                             <div class="col-md-6">
-                                <input id="vat" type="text" class="form-control" name="vat" required>
+                                <input id="vat" type="number" class="form-control" name="vat" required>
                             </div>
                         </div>
 
@@ -106,6 +119,14 @@
                                 <input id="img" type="text" class="form-control" name="img">
                             </div>
                         </div>
+                        
+                        <div class="mb-4 row">
+                            @foreach ($types as $type)
+                                <label for="{{ $type->name }}">{{ $type->name }}</label>
+                                <input type="checkbox" name="types" id="{{ $type->name }}" value="{{ $type->id }}">
+                            @endforeach
+                        </div>
+                        
 
                         <div class="mb-4 row mb-0">
                             <div class="col-md-6 offset-md-4">
