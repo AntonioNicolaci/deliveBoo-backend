@@ -44,7 +44,7 @@
                             <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Lastname') }}</label>
 
                             <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+                                <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname">
                                 <div id="lastnameAler" class="text-danger">
 
                                 </div>

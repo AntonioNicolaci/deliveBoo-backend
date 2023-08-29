@@ -10,54 +10,55 @@ form.addEventListener("submit", (event) => {
     
     const name = document.getElementById("name").value;
     const lastname = document.getElementById("lastname").value;
+    const email = document.getElementById("email").value;
     const address = document.getElementById("address").value;
 
     const nameAler = document.getElementById("nameAler");
     const lastnameAler = document.getElementById("lastnameAler");
+    const emailAler = document.getElementById("emailAler");
     const addressAler = document.getElementById("addressAler");
 
     const regExpNameLastname = /[^a-zA-Z]/
+    const regExpEmail = /^@\d{1, }|^.\d{1, }/
     const regExpAddress = /[0-1]|sn|snc$/
 
     // controllo sul nome
     if(name.length < 3) {
-        // nameAler.innerHTML = "Nome troppo corto"
         errors.push(1)
         valid = false
     }
     if(name.length > 15) {
-        // nameAler.innerHTML = "Nome troppo lungo"
         errors.push(2)
         valid = false
     }
     if (regExpNameLastname.test(name) == true) {
-        // nameAler.innerHTML = "Inserire solo lettere"
         errors.push(3)
         valid = false
     }
     
     // controllo sul cognome
     if(lastname.length < 3) {
-        // lastnameAler.innerHTML = "nome troppo corto"
-        errors.push(4)
+        errors.push(101)
         valid = false
     }
     if(lastname.length > 15) {
-        // lastnameAler.innerHTML = "nome troppo lungo"
-        errors.push(5)
+        errors.push(102)
         valid = false
     }
     if (regExpNameLastname.test(lastname) == true) {
-        // lastnameAler.innerHTML = "Inserire solo Lettere"
-        errors.push(6)
+        errors.push(103)
         valid = false
     }
 
     // controllo sull'indirizzo
     if(regExpAddress.test(address) == false) {
-        // addressAler.innerHTML = "Deve essere presente un numero civico"
-        errors.push(7)
+        errors.push(201)
         valid = false
+    }
+
+    // controllo email
+    if(regExpEmail.test(email) == false){
+
     }
 
     if (valid == false) {
@@ -69,15 +70,11 @@ form.addEventListener("submit", (event) => {
         errors.forEach(error => {
             if (error == 1 || error == 2 || error == 3) {
                 nameAler.innerHTML += errorsMessage[error - 1] 
-            } else if (error == 4 || error == 5 || error == 6) {
+            } else if (error == 101 || error == 102 || error == 103) {
                 lastnameAler.innerHTML += errorsMessage[error - 1]
-            } else {
+            } else if (error == 201) {
                 addressAler.innerHTML = errorsMessage[error - 1]
             }
         });
-    } else {
-        console.log("NON FUNZIONA UN CAZZO ma true");
-        // const url = Laravel.route("login");
-        // window.location.href = url;
     }
 })
