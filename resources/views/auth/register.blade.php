@@ -19,7 +19,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" onsubmit="formCont()" id="registerForm">
+                    <form method="POST" action="{{ route('register') }}" name="registerForm">
                         @csrf
 
                         <div class="mb-4 row">
@@ -27,8 +27,10 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                <div class="invalid-feedback" role="alert" id="nameAler">
+                                <div id="nameAler" class="text-danger">
+                                    <ul>
 
+                                    </ul>
                                 </div>
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -43,7 +45,9 @@
 
                             <div class="col-md-6">
                                 <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+                                <div id="lastnameAler" class="text-danger">
 
+                                </div>
                                 @error('lastname')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -57,7 +61,6 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -71,7 +74,6 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -95,7 +97,6 @@
                                 <input id="rest_name" type="text" class="form-control" name="rest_name" required>
                             </div>
                         </div>
-
                         <div class="mb-4 row">
                             <label for="address" class="col-md-4 col-form-label text-md-right">Indirizzo</label>
 
@@ -103,7 +104,9 @@
                                 <input id="address" type="text" class="form-control" name="address" required>
                             </div>
                         </div>
+                        <div id="addressAler" class="text-danger">
 
+                        </div>
                         <div class="mb-4 row">
                             <label for="vat" class="col-md-4 col-form-label text-md-right">P.IVA</label>
 
@@ -111,7 +114,6 @@
                                 <input id="vat" type="number" class="form-control" name="vat" required>
                             </div>
                         </div>
-
                         <div class="mb-4 row">
                             <label for="img" class="col-md-4 col-form-label text-md-right">Aggiungi L'Immaigne</label>
 
