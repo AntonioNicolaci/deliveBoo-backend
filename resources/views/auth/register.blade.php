@@ -27,11 +27,8 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                <div id="nameAler" class="text-danger">
-                                    <ul>
+                                <ul class="text-danger" id="nameAlert"></ul>
 
-                                    </ul>
-                                </div>
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -45,9 +42,8 @@
 
                             <div class="col-md-6">
                                 <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname">
-                                <div id="lastnameAler" class="text-danger">
+                                <ul id="lastnameAlert" class="text-danger"></ul>
 
-                                </div>
                                 @error('lastname')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -61,6 +57,8 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <ul></ul>
+
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -74,6 +72,8 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <ul id="passwordAlert"  class="text-danger"></ul>
+
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -87,6 +87,7 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <ul id="confPassAlert"  class="text-danger"></ul>
                             </div>
                         </div>
 
@@ -95,6 +96,7 @@
 
                             <div class="col-md-6">
                                 <input id="rest_name" type="text" class="form-control" name="rest_name" required>
+                                <ul></ul>
                             </div>
                         </div>
                         <div class="mb-4 row">
@@ -102,16 +104,16 @@
 
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control" name="address" required>
+                                <ul id="addressAlert" class="text-danger"></ul>
                             </div>
                         </div>
-                        <div id="addressAler" class="text-danger">
-
-                        </div>
+                        
                         <div class="mb-4 row">
                             <label for="vat" class="col-md-4 col-form-label text-md-right">P.IVA</label>
 
                             <div class="col-md-6">
                                 <input id="vat" type="number" class="form-control" name="vat" required>
+                                <ul id="pIvaAlert" class="text-danger"></ul>
                             </div>
                         </div>
                         <div class="mb-4 row">
@@ -123,16 +125,19 @@
                         </div>
                         
                         <div class="mb-4 row">
+                            <span class="col-md-4 col-form-label text-md-right">Tipologia di Ristorante</span>
                             @foreach ($types as $type)
                                 <label for="{{ $type->name }}">{{ $type->name }}</label>
                                 <input type="checkbox" name="types" id="{{ $type->name }}" value="{{ $type->id }}">
                             @endforeach
+                                <ul id="typeAlert"  class="text-danger"></ul>
                         </div>
-                        
 
                         <div class="mb-4 row mb-0">
+                            <span for="checkSubmit">Confermo che i dati inseriti sono corretti e che non saranno modificabili in seguito.</span>
+                            <input type="checkbox" name="checkSubmit" id="checkSubmit" onCheck="unlock(btnSub)">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" id="btnSub" disabled>
                                     {{ __('Register') }}
                                 </button>
                             </div>
