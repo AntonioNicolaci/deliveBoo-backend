@@ -55,10 +55,7 @@
           <th scope="col">Nome</th>
           <th scope="col">Ingredienti</th>
           <th scope="col">Prezzo</th>
-          <th scope="col">Visibile</th>
-          <th scope="col"></th> {{-- Bottone modifica --}}
-          <th scope="col"></th> {{-- Bottone elimina --}}
-          
+          <th scope="col" colspan="3">Visibile</th>        
         </tr>
       </thead>
       <tbody>
