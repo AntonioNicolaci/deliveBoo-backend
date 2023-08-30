@@ -16,14 +16,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">Registrati</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" name="registerForm">
                         @csrf
 
                         <div class="mb-4 row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Nome</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Lastname') }}</label>
+                            <label for="lastname" class="col-md-4 col-form-label text-md-right">Cognome</label>
 
                             <div class="col-md-6">
                                 <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname">
@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">Indirizzo Mail</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -83,7 +83,7 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Conferma password</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                         <div class="mb-4 row">
-                            <label for="img" class="col-md-4 col-form-label text-md-right">Aggiungi L'Immaigne</label>
+                            <label for="img" class="col-md-4 col-form-label text-md-right">Aggiungi logo attività</label>
 
                             <div class="col-md-6">
                                 <input id="img" type="text" class="form-control" name="img">
@@ -125,20 +125,28 @@
                         </div>
                         
                         <div class="mb-4 row">
-                            <span class="col-md-4 col-form-label text-md-right">Tipologia di Ristorante</span>
+                            <span class="col-md-4 col-form-label text-md-right">Tipologie di ristorante</span>
                             @foreach ($types as $type)
                                 <label for="{{ $type->name }}">{{ $type->name }}</label>
                                 <input type="checkbox" name="types" id="{{ $type->name }}" value="{{ $type->id }}">
                             @endforeach
                                 <ul id="typeAlert"  class="text-danger"></ul>
                         </div>
-
+                        <script>
+                            function test(){
+                                let checkbox = document.getElementById("Fritti")
+                                console.log(checkbox.value)
+                            }
+                        </script>
+                        <button onclick="test()">
+                            Cliccami
+                        </button>
                         <div class="mb-4 row mb-0">
                             <span for="checkSubmit">Confermo che i dati inseriti sono corretti e che non saranno modificabili in seguito.</span>
                             <input type="checkbox" name="checkSubmit" id="checkSubmit" onCheck="unlock(btnSub)">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary" id="btnSub" disabled>
-                                    {{ __('Register') }}
+                                    Registrati
                                 </button>
                             </div>
                         </div>
