@@ -67,11 +67,16 @@
             <td>{{$plate->name}}</td>
             <td>{{$plate->ingredients}}</td>
             <td>€ {{number_format($plate->price/100, 2, ',', '')}}</td>
-            <td>{{$plate->visibility ? 'Sì' : 'No'}}</td>
+            <td class="text-center">{{$plate->visibility ? 'Sì' : 'No'}}</td>
             <td>
-              <button type="button" class="btn btn-danger js-delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
+              <form action="{{ route('plates.edit', ['plate' => $plate->id]) }}" method="GET">
+                <button type="submit" class="btn btn-warning">Modifica</button>
+              </form>
+            </td>
+            <td>
+             <button type="button" class="btn btn-danger js-delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
                 Elimina
-            </button>
+              </button>
             </td>
 
             <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
