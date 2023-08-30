@@ -19,12 +19,12 @@
             <div> Tipologia: 
               @foreach ($types as $type)
                 @if(($loop->count == 1))
-                  {{$type->name}}.
+                  {{$type->name}}
                 @else
                   @if($loop->last == false)
                     {{$type->name}},
                   @else
-                    {{$type->name}}.
+                    {{$type->name}}
                   @endif
                 @endif
               @endforeach
