@@ -98,7 +98,7 @@
                             <label for="rest_name" class="col-md-4 col-form-label text-md-right">Nome Attività</label>
 
                             <div class="col-md-6">
-                                <input id="rest_name" type="text" class="form-control" name="rest_name">
+                                <input id="rest_name" type="text" class="form-control" name="rest_name" value="{{ old('rest_name') }}" >
                                 <ul></ul>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">Indirizzo</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control" name="address">
+                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" >
                                 <ul id="addressAlert" class="text-danger"></ul>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                             <label for="vat" class="col-md-4 col-form-label text-md-right">P.IVA</label>
 
                             <div class="col-md-6">
-                                <input id="vat" type="number" class="form-control" name="vat">
+                                <input id="vat" type="number" class="form-control" name="vat" value="{{ old('vat') }}" >
                                 <ul id="pIvaAlert" class="text-danger"></ul>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                             <label for="img" class="col-md-4 col-form-label text-md-right">Aggiungi logo attività</label>
 
                             <div class="col-md-6">
-                                <input id="img" type="text" class="form-control" name="img">
+                                <input id="img" type="text" class="form-control" name="img" value="{{ old('img') }}" >
                             </div>
                         </div>
                         
