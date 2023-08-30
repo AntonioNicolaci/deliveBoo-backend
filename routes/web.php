@@ -33,9 +33,12 @@ Route::get('/dashboard', function () {
 
 Route::resource('/dashboard', RestaurantController::class);
 Route::get('/plates/create', [PlateController::class, 'create'])->name('plates.create');
+Route::get('/plates/{plate}', [PlateController::class, 'edit'])->name('plates.edit');
 Route::post('/plates', [PlateController::class, 'store'])->name('plates.store'); //per l'archiviazione dei dati del piatto
-
+Route::put('/plates/{plate}', [PlateController::class, 'update'])->name('plates.update');
 Route::delete('/plates/{plate}', [PlateController::class, 'destroy'])->name('plates.destroy');
+
+
 
 
 
