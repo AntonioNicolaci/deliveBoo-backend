@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <form method="post" action="{{ route('plates.update', ['plate' => $plate->id]) }}">
+        <form method="post" action="{{ route('plates.update', ['plate' => $plate->id]) }}" id="formEditLogin">
         @csrf
         @method('PUT')
         <div class="mb-3">
