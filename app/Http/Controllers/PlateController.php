@@ -61,15 +61,25 @@ class PlateController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit(Plate $plate)
     {
-        //
+        return view('plates.edit', compact('plate'));
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Plate $plate)
     {
-        //
+        $request->validate($this->validation);
+
+        $data = $request->all();
+
+        $plate->name = $data['name'];
+        $plate->ingredients = $data['ingredients'];
+        $plate->price = $data['price'];
+        $plate->visibility = $data['visibility'];
+        $plate->update();
+
+        return redirect()->route('plates.edit', ['plate' => $plate->id]);
     }
 
 

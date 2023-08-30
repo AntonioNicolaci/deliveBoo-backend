@@ -11,7 +11,7 @@
         </div>
         <div class="mb-3">
             <label for="ingredients" class="form-label">Ingredienti</label>
-            <textarea class="form-control" id="ingredients" rows="3" name="ingredients" value="{{ old('ingredients') }}"></textarea>
+            <textarea class="form-control" id="ingredients" rows="3" name="ingredients" ></textarea>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
