@@ -38,7 +38,7 @@ class PlateController extends Controller
 
     public function store(Request $request)
     {
-        // $request->validate($this->validation);
+        $request->validate($this->validation);
 
         $data = $request->all();
         $restaurant_id = DB::table('restaurants')->where('user_id', Auth::id())->select('restaurants.id')->get();
@@ -87,7 +87,7 @@ class PlateController extends Controller
     }
 
 
-    public function destroy( Plate $plate)
+    public function destroy(Plate $plate)
 {
     $plate->delete();
 
