@@ -87,7 +87,7 @@ class PlateController extends Controller
     }
 
 
-    public function destroy(Plate $plate)
+    public function destroy( Plate $plate)
 {
     $plate->delete();
 

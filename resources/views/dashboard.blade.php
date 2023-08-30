@@ -74,16 +74,16 @@
               </form>
             </td>
             <td>
-             <button type="button" class="btn btn-danger js-delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
+             <button type="button" class="btn btn-danger myModal" data-bs-toggle="modal" data-bs-target="#{{$plate->id}}" data-id="{{ $plate->id }}">
                 Elimina
               </button>
             </td>
 
-            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal fade" id="{{$plate->id}}" tabindex="-1" aria-labelledby="myInput" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="deleteModalLabel">Conferma Eliminazione</h1>
+                    <h1 class="modal-title fs-5" id="myInput">Conferma Eliminazione</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
@@ -93,9 +93,12 @@
 
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                  <form method="post" action="{{ route('plates.destroy', ['plate'=> $plate->id]) }}">
+                  <form method="post" action="{{ route('plates.destroy', ['plate'=> $plate->id]) }}" id="myForm">
                     @method('delete')
                     @csrf
+                    <input type="hidden" name="name">
+                    <input type="hidden" name="price">
+                    <input type="hidden" name="ingredients">
                     <button class="btn btn-danger">Elimina</button>
                   </form>
                 </div>
