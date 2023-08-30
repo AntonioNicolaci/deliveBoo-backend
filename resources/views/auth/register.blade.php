@@ -131,7 +131,7 @@
                             <span class="col-md-4 col-form-label text-md-right">Tipologie di ristorante</span>
                             @foreach ($types as $type)
                                 <label for="{{ $type->name }}">{{ $type->name }}</label>
-                                <input type="checkbox" name="types" id="{{ $type->name }}" value="{{ $type->id }}">
+                                <input type="checkbox" name="types[]" id="{{ $type->name }}" value="{{ $type->id }}">
                             @endforeach
                                 <ul id="typeAlert"  class="text-danger"></ul>
                         </div>
