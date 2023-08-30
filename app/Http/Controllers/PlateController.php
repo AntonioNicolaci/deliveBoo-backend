@@ -6,9 +6,8 @@ use App\Models\Type;
 use App\Models\Plate;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
-use App\Models\Plate;
-use App\Models\Type;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PlateController extends Controller
 {
