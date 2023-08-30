@@ -57,28 +57,28 @@ class PlateController extends Controller
     }
 
 
-    public function show($id)
+    public function show(Plate $plate)
     {
         //
     }
 
 
-    public function edit($id)
+    public function edit(Plate $plate)
     {
         //
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Plate $plate)
     {
         //
     }
 
 
     public function destroy(Plate $plate)
-    {
-        $plate->delete();
+{
+    $plate->delete();
 
-        return redirect()->route('dashboard.index')->with('delete_success', $plate);
-    }
+    return redirect()->route('dashboard.index')->with('delete_success', $plate);
+}
 }

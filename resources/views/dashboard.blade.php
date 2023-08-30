@@ -27,42 +27,69 @@
     <h1>I Tuoi Piatti</h1>
 
     <div class="d-flex">
-        <h5>Crea un nuovo piatto</h5>
-        <a class="btn btn-primary" href="{{ route('plates.create') }}">Crea</a>
-        
-        
+      <h5>Crea un nuovo piatto</h5>
+      <a class="btn btn-primary" href="{{ route('plates.create') }}">Crea</a>  
     </div>
 
+    @if (session('delete_success'))
+      @php $plate = session('delete_success') @endphp
+      <div class="alert alert-success">
+        "{{ $plate->name }}" è stata eliminata con successo!
+      </div>
+    @endif
 
     <table class="table">
-        <thead>
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Ingredienti</th>
+          <th scope="col">Prezzo</th>
+          <th scope="col">Visibile</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($plates as $plate)
           <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Ingredienti</th>
-            <th scope="col">Prezzo</th>
-            <th scope="col">Visibile</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
+            <td>{{$plate->name}}</td>
+            <td>{{$plate->ingredients}}</td>
+            <td>€ {{number_format($plate->price/100, 2, ',', '')}}</td>
+            <td>{{$plate->visibility ? 'Sì' : 'No'}}</td>
+            <td>
+              <button type="button" class="btn btn-danger js-delete" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Elimina
+            </button>
+            </td>
 
-            @foreach ($plates as $plate)
-              <tr>
-                <td>{{$plate->name}}</td>
-                <td>{{$plate->ingredients}}</td>
-                <td>€ {{number_format($plate->price/100, 2, ',', '')}}</td>
-                <td>{{$plate->visibility ? 'Sì' : 'No'}}</td>
-                <td>
-                  <form action="{{ route('plates.destroy', ['plate' => $plate->id]) }}" method="POST">
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="deleteModalLabel">Conferma Eliminazione</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                  Vuoi eliminare {{$plate->name}}?
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                  <form method="post" action="{{ route('plates.destroy', ['plate'=> $plate->id]) }}">
+                    @method('delete')
                     @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Elimina</button>
+                    <button class="btn btn-danger">Elimina</button>
                   </form>
-                </td>
-              </tr>
-            @endforeach
-          </tbody>
-      </table>
-</div>
+                </div>
+
+                </div>
+              </div>
+            </div>
+          </tr>
+        @endforeach
+      </tbody>
+    </table>
+  </div>
 @endsection
+
 
