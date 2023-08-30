@@ -82,11 +82,12 @@
                             </div>
                         </li>
                         @endauth
+                        @if (!Route::has(''))
                         <li class="nav-item">
-                            {{--<a class="nav-link" href="{{ url('/') }}"> --}}
-                                <x-b-nav text="Homepage" :routeUrl="url('/')"/>
-                            {{--</a>--}}
+                            <x-b-nav text="Homepage" :routeUrl="url('/')"/>
                         </li>
+                        @else
+                        @endif
                     </ul>
                 </div>
             </div>

@@ -38,7 +38,7 @@ class PlateController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate($this->validation);
+        // $request->validate($this->validation);
 
         $data = $request->all();
         $restaurant_id = DB::table('restaurants')->where('user_id', Auth::id())->select('restaurants.id')->get();
@@ -65,13 +65,25 @@ class PlateController extends Controller
 
     public function edit(Plate $plate)
     {
-        //
+        return view('plates.edit', compact('plate'));
     }
 
 
     public function update(Request $request, Plate $plate)
     {
-        //
+        $request->validate($this->validation);
+
+        $data = $request->all();
+        $restaurant_id = DB::table('restaurants')->where('user_id', Auth::id())->select('restaurants.id')->get();
+
+        $plate->restaurant_id = $restaurant_id[0]->id;
+        $plate->name = $data['name'];
+        $plate->ingredients = $data['ingredients'];
+        $plate->price = $data['price'];
+        $plate->visibility = $data['visibility'];
+        $plate->update();
+
+        return redirect()->route('dashboard.index')->with('plates', $plate);
     }
 
 

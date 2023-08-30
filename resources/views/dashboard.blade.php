@@ -16,9 +16,20 @@
             <div>
               Indirizzo: {{ $restaurant->address}}
             </div>
-          @foreach ($types as $type)
-           <span> Tipo: {{$type->name}}</span>
-          @endforeach        
+            <div> Tipologia: 
+              @foreach ($types as $type)
+                @if(($loop->count == 1))
+                  {{$type->name}}
+                @else
+                  @if($loop->last == false)
+                    {{$type->name}},
+                  @else
+                    {{$type->name}}
+                  @endif
+                @endif
+              @endforeach
+            </div>
+                 
         </div>
         <img class="w-25" src={{Vite::asset("resources/img/$restaurant->img")}} alt="">
       @endforeach
