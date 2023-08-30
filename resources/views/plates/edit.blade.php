@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <form method="get" action="{{ route('plates.edit', ['plate' => $plate->id]) }}">
+        <form method="post" action="{{ route('plates.update', ['plate' => $plate->id]) }}">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -19,11 +19,12 @@
             <input type="number" class="form-control" id="price" name="price" value="{{ old('price', $plate->price) }}">
         </div>
         <div class="mb-3">
-            <label for="visibility" class="form-label">Visibile</label>
-            <input type="radio" id="visibility" name="visibility" value="{{ old('visibility', $plate->visibility)  }}">Sì 
-            <input type="radio" id="visibility" name="visibility" value="{{ old('visibility', $plate->visibility) }}">No 
+            <label for="visibility_true" class="form-label">Si</label>
+            <input type="radio" id="visibility_true" name="visibility" value="1">
+            <label for="visibility_false" class="form-label">No</label>
+            <input type="radio" id="visibility_false" name="visibility" value="0">
         </div>
-        <button>Salva</button>
+        <button type="submit">Salva</button>
     </form>
     </div>
 

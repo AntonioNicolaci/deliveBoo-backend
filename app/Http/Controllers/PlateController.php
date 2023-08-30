@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Plate;
 use App\Models\Type;
+use App\Models\Plate;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class PlateController extends Controller
@@ -38,20 +40,22 @@ class PlateController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate($this->validation);
+        // $request->validate($this->validation);
 
         $data = $request->all();
+        $restaurant_id = DB::table('restaurants')->where('user_id', Auth::id())->select('restaurants.id')->get();
 
         // salvare i dati nel db (questo metodo anche se è più lungo è il più sicuro)
         $newPlate = new Plate();
 
+        $newPlate->restaurant_id = $restaurant_id[0]->id;
         $newPlate->name = $data['name'];
         $newPlate->ingredients = $data['ingredients'];
         $newPlate->price = $data['price'];
         $newPlate->visibility = $data['visibility'];
         $newPlate->save();
 
-        return redirect()->route('dashboard.index', ['plate' => $newPlate]);
+        return redirect()->route('dashboard.index');
     }
 
 
@@ -72,14 +76,16 @@ class PlateController extends Controller
         $request->validate($this->validation);
 
         $data = $request->all();
+        $restaurant_id = DB::table('restaurants')->where('user_id', Auth::id())->select('restaurants.id')->get();
 
+        $plate->restaurant_id = $restaurant_id[0]->id;
         $plate->name = $data['name'];
         $plate->ingredients = $data['ingredients'];
         $plate->price = $data['price'];
         $plate->visibility = $data['visibility'];
         $plate->update();
 
-        return redirect()->route('plates.edit', ['plate' => $plate->id]);
+        return redirect()->route('dashboard.index')->with('plates', $plate);
     }
 
 
