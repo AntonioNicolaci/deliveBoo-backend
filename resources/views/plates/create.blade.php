@@ -27,7 +27,7 @@
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="number" class="form-control @error('price') is-invalid @enderror" id="prev-price" name="prev-price" value="{{old('prev-price')}}" min="0" step="0.01" require>
+            <input type="number" class="form-control @error('price') is-invalid @enderror" id="prev-price" name="prev-price" value="{{old('prev-price')}}" min="1" step="0.01" require>
             <ul class="text-danger" id="nameAlert"></ul>
             @error('price')
                 <div class="invalid-feedback">
