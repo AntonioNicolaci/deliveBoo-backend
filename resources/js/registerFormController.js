@@ -18,7 +18,7 @@ if (document.querySelector('#registerForm') !== null) {
 
         let valid = true
         let errors = [];
-        const errorsMessage = ["<li>Nome troppo corto</li>", "<li>Nome troppo lungo</li>", "<li>Inserire solo lettere</li>", "<li>Cognome troppo corto</li>", "<li>Cognome troppo lungo</li>", "<li>Inserire solo Lettere</li>", "<li>Deve essere presente un numero civico</li>", "<li>Bisogna inserire almeno una tipologia</li>", "<li>Password troppo corta</li>", "<li>Le due Password non coincidono</li>", "<li>La Partita Iva è troppo corta</li>", "<li>I campi contrassegnati con l'asterisco sono obligatori</li>"]
+        const errorsMessage = ["<li>Nome troppo corto</li>", "<li>Nome troppo lungo</li>", "<li>Inserire solo lettere</li>", "<li>Cognome troppo corto</li>", "<li>Cognome troppo lungo</li>", "<li>Inserire solo Lettere</li>", "<li>Deve essere presente un numero civico</li>", "<li>Bisogna inserire almeno una tipologia</li>", "<li>Password troppo corta</li>", "<li>Le due Password non coincidono</li>", "<li>La Partita Iva è troppo corta</li>", "<li>I campi contrassegnati con l'asterisco sono obligatori</li>", "<li>La Partita IVA è troppo lunga</li>"]
         let checkdType = 0
         let inputNull = 0
         
@@ -49,11 +49,13 @@ if (document.querySelector('#registerForm') !== null) {
             }
         });
 
-        input.forEach(inp => {
-            console.log(inp.value);
-            if (inp.value == null) {
-                inputNull++
+        input.forEach((inp, key) => {
+            if (key <= 8) {
+                if (inp.value == "") {
+                    inputNull++
+                }    
             }
+            
         })
 
         // controllo sul nome
@@ -115,6 +117,11 @@ if (document.querySelector('#registerForm') !== null) {
             valid = false
         }
 
+        if (vat >= 12){
+            errors.push(13)
+            valid = false
+        }
+
         if (!valid) {
             event.preventDefault();
             console.log("Stop right there criminal scum");
@@ -145,8 +152,12 @@ if (document.querySelector('#registerForm') !== null) {
                     pIvaAlert.innerHTML += errorsMessage[error - 1]
                 } else if (error == 12) {
                     inputAlert.innerHTML += errorsMessage[error - 1]
+                } else if (error == 13) {
+                    inputAlert.innerHTML += errorsMessage[error - 1]
                 }
             });
         }
     })    
 }
+
+if (document.querySelector('#formEditLogin') !== null) {}
