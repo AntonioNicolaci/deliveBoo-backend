@@ -19,6 +19,13 @@ class PlateController extends Controller
         'visibility'         => 'required|boolean',
     ];
 
+    private $validation_messages = [
+        'name.required'  => 'Il campo nome è obbligatorio',
+        'ingredients.required'  => 'Il campo ingredienti è obbligatorio',
+        'price.required'  => 'il campo prezzo è obbligatorio',
+        'name.max'       => 'Il campo nome non può superare i :max caratteri',
+    ];
+
 
     public function index()
     {
@@ -38,7 +45,7 @@ class PlateController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate($this->validation);
+        $request->validate($this->validation, $this->validation_messages);
 
         $data = $request->all();
         $restaurant_id = DB::table('restaurants')->where('user_id', Auth::id())->select('restaurants.id')->get();
@@ -71,7 +78,7 @@ class PlateController extends Controller
 
     public function update(Request $request, Plate $plate)
     {
-        $request->validate($this->validation);
+        $request->validate($this->validation, $this->validation_messages);
 
         $data = $request->all();
         $restaurant_id = DB::table('restaurants')->where('user_id', Auth::id())->select('restaurants.id')->get();
@@ -87,10 +94,10 @@ class PlateController extends Controller
     }
 
 
-    public function destroy(Plate $plate)
-{
-    $plate->delete();
+        public function destroy(Plate $plate)
+    {
+        $plate->delete();
 
-    return redirect()->route('dashboard.index')->with('delete_success', $plate);
-}
+        return redirect()->route('dashboard.index')->with('delete_success', $plate);
+    }
 }

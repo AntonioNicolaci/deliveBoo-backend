@@ -66,7 +66,7 @@
             <td>€ {{number_format($plate->price/100, 2, ',', '')}}</td>
             <td class="text-center">{{$plate->visibility ? 'Sì' : 'No'}}</td>
             <td>
-              <form action="{{ route('plates.edit', ['plate' => $plate->id]) }}" method="GET">
+              <form action="{{ route('plates.update', ['plate' => $plate->id]) }}" method="GET">
                 <button type="submit" class="btn btn-warning">Modifica</button>
               </form>
             </td>
