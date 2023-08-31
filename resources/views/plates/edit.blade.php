@@ -25,8 +25,9 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="price" class="form-label">Prezzo</label>
-            <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" min="1" step="0.01" value="{{ old('price', $plate->price/100) }}">
+            <label for="prev-price" class="form-label">Prezzo</label>
+            <input type="number" class="form-control @error('price') is-invalid @enderror" id="prev-price" name="prev-price" min="1" step="0.01" value="{{ old('prev-price', $plate->price/100) }}">
+            <input type="hidden" id="price" name="price" value="{{'price'}}">
             @error('price')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -39,7 +40,14 @@
             <label for="visibility_false" class="form-label">No</label>
             <input type="radio" id="visibility_false" name="visibility" value="0">
         </div>
-        <button type="submit">Salva</button>
+        <script>
+            function multiplyPrice() {
+                let prevprice = document.getElementById("prev-price")
+                let price = document.getElementById("price")
+                price.value = prevprice.value * 100
+            }
+        </script>
+        <button onclick="multiplyPrice()" type="submit">Salva</button>
     </form>
     </div>
 
