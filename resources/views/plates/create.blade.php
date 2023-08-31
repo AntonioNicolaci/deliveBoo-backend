@@ -7,18 +7,33 @@
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" require>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" require>
             <ul class="text-danger" id="nameAlert"></ul>
+            @error('name')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="ingredients" class="form-label">Ingredienti</label>
-            <textarea class="form-control" id="ingredients" rows="3" name="ingredients" require>{{ old('ingredients') }}</textarea>
+            <textarea class="form-control @error('ingredients') is-invalid @enderror" id="ingredients" rows="3" name="ingredients" require>{{ old('ingredients') }}</textarea>
             <ul class="text-danger" id="nameAlert"></ul>
+            @error('ingredients')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="number" class="form-control" id="prev-price" name="prev-price" value="{{old('prev-price')}}" min="0" step="0.01" require>
+            <input type="number" class="form-control @error('price') is-invalid @enderror" id="prev-price" name="prev-price" value="{{old('prev-price')}}" min="0" step="0.01" require>
             <ul class="text-danger" id="nameAlert"></ul>
+            @error('price')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
 
             <input type="hidden" id="price" name="price" value="{{'price'}}">
         </div>
