@@ -55,7 +55,9 @@
           <th scope="col">Nome</th>
           <th scope="col">Ingredienti</th>
           <th scope="col">Prezzo</th>
-          <th scope="col" colspan="3">Visibile</th>        
+          <th scope="col">Visibile</th>
+          <th scope="col"></th>
+          <th scope="col"></th>      
         </tr>
       </thead>
       <tbody>
@@ -66,14 +68,13 @@
             <td>€ {{number_format($plate->price/100, 2, ',', '')}}</td>
             <td class="text-center">{{$plate->visibility ? 'Sì' : 'No'}}</td>
             <td>
-              <form action="{{ route('plates.update', ['plate' => $plate->id]) }}" method="GET">
-                <button type="submit" class="btn btn-warning">Modifica</button>
-              </form>
+              <a href="{{ route('plates.update', ['plate' => $plate->id]) }}" method="GET"><i class="mt-2 fa-solid fa-pen"></i></a> 
             </td>
             <td>
-             <button type="button" class="btn btn-danger myModal" data-bs-toggle="modal" data-bs-target="#{{$plate->id}}" data-id="{{ $plate->id }}">
-                Elimina
-              </button>
+             <button type="button" class="btn myModal" data-bs-toggle="modal" data-bs-target="#{{$plate->id}}" data-id="{{ $plate->id }}">
+              <i class="fa-solid fa-trash-can" style="color: #f31212;"></i>
+            </button>
+              
             </td>
 
             <div class="modal fade" id="{{$plate->id}}" tabindex="-1" aria-labelledby="myInput" aria-hidden="true">
