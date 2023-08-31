@@ -54,8 +54,8 @@
         <tr>
           <th scope="col">Nome</th>
           <th scope="col">Ingredienti</th>
-          <th scope="col">Prezzo</th>
-          <th scope="col" colspan="3">Visibile</th>        
+          <th class="w-auto" scope="col">Prezzo</th>
+          <th class="w-auto" scope="col" colspan="3">Visibile</th>        
         </tr>
       </thead>
       <tbody>
@@ -67,12 +67,12 @@
             <td class="text-center">{{$plate->visibility ? 'Sì' : 'No'}}</td>
             <td>
               <form action="{{ route('plates.update', ['plate' => $plate->id]) }}" method="GET">
-                <button type="submit" class="btn btn-warning">Modifica</button>
+                <button type="submit" class="btn btn-warning">m</button>
               </form>
             </td>
             <td>
              <button type="button" class="btn btn-danger myModal" data-bs-toggle="modal" data-bs-target="#{{$plate->id}}" data-id="{{ $plate->id }}">
-                Elimina
+                x
               </button>
             </td>
 

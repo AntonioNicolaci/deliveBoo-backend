@@ -26,7 +26,7 @@
         </div>
         <div class="mb-3">
             <label for="prev-price" class="form-label">Prezzo</label>
-            <input type="number" class="form-control @error('price') is-invalid @enderror" id="prev-price" name="prev-price" min="1" step="0.01" value="{{ old('prev-price', $plate->price/100) }}">
+            <input type="number" class="form-control @error('price') is-invalid @enderror" id="prev-price" name="prev-price" min="1" max="327" step="0.01" value="{{ old('prev-price', $plate->price/100) }}">
             <input type="hidden" id="price" name="price" value="{{'price'}}">
             @error('price')
                 <div class="invalid-feedback">
