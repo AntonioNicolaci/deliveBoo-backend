@@ -12,6 +12,6 @@ class TypeApiController extends Controller
     {
         $types = Type::all();
 
-        return response()->json(($types));
+        return response()->json($types);
     }
 }
