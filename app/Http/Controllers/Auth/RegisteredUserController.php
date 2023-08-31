@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Models\Type;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
-use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Auth\Events\Registered;
+use App\Providers\RouteServiceProvider;
+use App\Http\Controllers\TypeController;
 
 class RegisteredUserController extends Controller
 {
@@ -20,7 +24,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        $types = Type::all();
+        return view('auth.register')->with('types', $types);
     }
 
     /**
@@ -32,9 +37,14 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'lastname' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:15'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'rest_name' => ['required', 'string', 'max:50'],
+            'address' => ['required', 'string', 'max:50'],
+            'vat' => ['required', 'string', 'max:11', 'min:11', 'unique:'.Restaurant::class],
+            'img' => ['nullable', 'string', 'max:150'],
+            'types' => ['min:1']
         ]);
 
         $user = User::create([
@@ -43,6 +53,15 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        $restaurant = Restaurant::create([
+            'rest_name' => $request->rest_name,
+            'address' => $request->address,
+            'vat' => $request->vat,
+            'img' => $request->img,
+            'user_id' => $user->id,
+        ]);
+
+        $restaurant->types()->sync($request["types"]);
 
         event(new Registered($user));
 

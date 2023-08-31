@@ -2,28 +2,35 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Type;
+use App\Models\User;
+use App\Models\Plate;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Restaurant extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
+    
+    protected $fillable = [
+        'rest_name',
+        'address',
+        'vat',
+        'img',
+        'user_id',
+      ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    // relazione uno a molti con la tabella plates
     public function plates()
     {
         return $this->hasMany(Plate::class);
-    }
-
-    public function orders()
-    {
-        return $this->hasMany(Order::class);
-    }
-
-    public function users()
-    {
-        return $this->hasOne(User::class);
     }
 
     public function types()
