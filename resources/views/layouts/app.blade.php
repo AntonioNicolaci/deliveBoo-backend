@@ -22,7 +22,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-sm navbar-light shadow-sm justify-content-center p-0">
+        <nav class="navbar navbar-expand-sm navbar-light shadow-sm justify-content-center py-4">
             <div class="container p-0">
                 <div class="navbar-brand m-0 p-0">
                     <img src="{{ Vite::asset('resources/img/coloratofinale_360.png') }}" alt="logo_sito">
@@ -83,12 +83,13 @@
                             </div>
                         </li>
                         @endauth
-                        @if (!Route::has(''))
+
+                        <a href="http://localhost:5174"><button class="btnStyle">Homepage</button></a>
+                        {{-- @if (!Route::has(''))
                         <li class="nav-item">
-                            <x-b-nav text="Homepage" :routeUrl="url('/')"/>
+                            <x-b-nav text="Homepage" :routeUrl="http://localhost:5174"/>
                         </li>
-                        @else
-                        @endif
+                        @endif --}}
                     </ul>
                 </div>
             </div>
