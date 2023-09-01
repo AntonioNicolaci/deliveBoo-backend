@@ -83,12 +83,13 @@
                             </div>
                         </li>
                         @endauth
-                        @if (!Route::has(''))
+
+                        <a href="http://localhost:5174"><button class="btnStyle">Homepage</button></a>
+                        {{-- @if (!Route::has(''))
                         <li class="nav-item">
-                            <x-b-nav text="Homepage" :routeUrl="url('/')"/>
+                            <x-b-nav text="Homepage" :routeUrl="http://localhost:5174"/>
                         </li>
-                        @else
-                        @endif
+                        @endif --}}
                     </ul>
                 </div>
             </div>
