@@ -107,7 +107,7 @@ if (document.querySelector('#registerForm') !== null) {
             valid = false
         }
 
-        if (vat <= 7) {
+        if (vat.length <= 10) {
             errors.push(11)
             valid = false
         }
@@ -117,7 +117,7 @@ if (document.querySelector('#registerForm') !== null) {
             valid = false
         }
 
-        if (vat >= 12){
+        if (vat.length >= 12){
             errors.push(13)
             valid = false
         }
@@ -153,11 +153,55 @@ if (document.querySelector('#registerForm') !== null) {
                 } else if (error == 12) {
                     inputAlert.innerHTML += errorsMessage[error - 1]
                 } else if (error == 13) {
-                    inputAlert.innerHTML += errorsMessage[error - 1]
+                    pIvaAlert.innerHTML += errorsMessage[error - 1]
                 }
             });
         }
     })    
 }
 
-if (document.querySelector('#formEditLogin') !== null) {}
+// if (document.querySelector('#formEditLogin') !== null) {
+
+//     form.addEventListener("submit", (event) => {
+
+//         let valid = true
+//         let errors = [];
+//         const errorsMessage = ["<li>Nome troppo corto</li>", "<li>Nome troppo lungo</li>", "<li>Inserire solo lettere</li>", "<li>Cognome troppo corto</li>", "<li>Cognome troppo lungo</li>", "<li>Inserire solo Lettere</li>", "<li>Deve essere presente un numero civico</li>", "<li>Bisogna inserire almeno una tipologia</li>", "<li>Password troppo corta</li>", "<li>Le due Password non coincidono</li>", "<li>La Partita Iva è troppo corta</li>", "<li>I campi contrassegnati con l'asterisco sono obligatori</li>", "<li>La Partita IVA è troppo lunga</li>"]
+        
+
+//         const name = document.getElementById("name").value;
+//         const ingredients = document.getElementById("ingredients").value;
+//         const price = document.getElementById("price").value;
+//         const visibility = document.getElementById("visibility").value;
+
+//         const nameAlert = document.getElementById("nameAlert").value;
+//         const ingredientsAlert = document.getElementById("ingredientsAlert").value;
+//         const priceAlert = document.getElementById("priceAlert").value;
+//         const visibilityAlert = document.getElementById("visibilityAlert").value;
+
+//         if (name.length >=51) {
+//             errors.push(1)
+//             valid = false
+//         }
+
+//         if(visibility.value == ""){
+//             errors.push(2)
+//             valid = false
+//         }
+
+//         if (!valid) {
+//             event.preventDefault();
+//             console.log("Stop right there criminal scum");
+//             inputAlert.innerHTML = ""
+//             nameAlert.innerHTML = ""
+//             ingredientsAlert.innerHTML = ""
+//             priceAlert.innerHTML = ""
+//             visibilityAlert.innerHTML = ""
+//             errors.forEach(error => {
+//                 if (error == 1) {
+                    
+//                 }
+//             });
+//         }
+//     })
+// }
