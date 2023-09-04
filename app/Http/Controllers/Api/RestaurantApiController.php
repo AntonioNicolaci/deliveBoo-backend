@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use SebastianBergmann\CodeCoverage\Driver\Selector;
 
 class RestaurantApiController extends Controller
 {

@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\DataApiController;
 use App\Http\Controllers\Api\TypeApiController;
 use App\Http\Controllers\Api\RestaurantApiController;
 
@@ -22,3 +23,4 @@ use App\Http\Controllers\Api\RestaurantApiController;
 
 Route::get('types', [TypeApiController::class, 'index'])->name('api.types.index');
 Route::get('restaurants', [RestaurantApiController::class, 'index'])->name('api.restaurants.index');
+Route::get('data', [DataApiController::class, 'index'])->name('api.data.index');
