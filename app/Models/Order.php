@@ -13,4 +13,9 @@ class Order extends Model
     {
         return $this->belongsTo(Restaurant::class);
     }
+
+    public function plates()
+    {
+        return $this->belongsToMany('App\Models\Plate')->withPivot('amount');
+    }
 }

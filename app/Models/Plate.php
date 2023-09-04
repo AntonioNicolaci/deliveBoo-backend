@@ -13,7 +13,13 @@ class Plate extends Model
     public $timestamps = false;
 
     //relazione uno a molti con la tabella restaurants
-    public function restaurant(){
+    public function restaurant()
+    {
         return $this->belongsTo(Restaurant::class);
+    }
+
+    public function orders()
+    {
+        return $this->belongsToMany('App\Models\Plate')->withPivot('amount');
     }
 }
