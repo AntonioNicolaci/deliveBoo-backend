@@ -22,7 +22,7 @@ class DataApiController extends Controller
 
         $plates = Plate::all();
 
-        $data = ["restautants" => $restaurants, "res_type" => $res_type, "types" => $types, "plates" => $plates];
+        $data = ["restaurants" => $restaurants, "res_type" => $res_type, "types" => $types, "plates" => $plates];
 
         return response($data);
     }
