@@ -32,6 +32,7 @@
                  
         </div>
         <img class="w-25" src={{Vite::asset("resources/img/$restaurant->img")}} alt="">
+        {{-- <img class="w-25" src={{asset("storage/" . $restaurant->img)}} alt=""> --}}
       @endforeach
     </div>
 
