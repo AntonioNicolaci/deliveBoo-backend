@@ -29,12 +29,12 @@ class RestaurantController extends Controller
         //     ->select('restaurants.id', 'restaurants.rest_name','restaurants.img', 'plates.restaurant_id', 'plates.name', 'plates.ingredients', 'plates.price')
         //     ->get();
 
-        $restaurantId = $request;
-
+        // $restaurantId = $restaurant->id;
+        
         $restaurantshow = DB::table('restaurants')
             ->join('plates', 'restaurants.id', '=', 'plates.restaurant_id')
             ->select('restaurants.id', 'restaurants.rest_name', 'restaurants.img', 'plates.restaurant_id', 'plates.name', 'plates.ingredients', 'plates.price')
-            ->where('restaurants.id', '=', $restaurantId)
+            ->where('restaurants.id', '=', $restaurant->id)
             ->get();
 
         return response()->json($restaurantshow);
