@@ -33,7 +33,7 @@ return [
         // id = 4
         "name"            => "Cinese",
         "description"     => "La cucina cinese è una delle più antiche e influenti al mondo, con una storia che si estende per millenni. È caratterizzata da una vasta gamma di sapori, ingredienti e tecniche di cottura. La cucina cinese si basa sull'equilibrio tra i cinque sapori fondamentali: dolce, salato, acido, amaro e piccante. I principi di Yin e Yang sono spesso applicati per creare armonia nei piatti.",
-        "img"             => "cinese.jpeg",
+        "img"             => "cinese.jpg",
     ],
 
     [
@@ -54,7 +54,7 @@ return [
         // id = 7
         "name"            => "Thailandese ",
         "description"     => "La cucina thailandese è rinomata per la sua combinazione unica di sapori contrastanti e l'uso creativo di ingredienti freschi e aromatici. Caratterizzata da un mix di dolce, salato, acido, piccante e amaro, la cucina thailandese offre una vasta gamma di piatti che riflettono la cultura e la geografia del paese.",
-        "img"             => "tailandese.jpeg",
+        "img"             => "tailandese.jpg",
     ],
 
     [
@@ -89,6 +89,6 @@ return [
         // id = 12
         "name"            => "Fritti",
         "description"     => "La frittura è una tecnica di cottura in cui gli alimenti vengono immersi nell'olio caldo o grasso e cotti fino a diventare dorati e croccanti. Questa tecnica è ampiamente utilizzata in cucine di tutto il mondo per preparare una varietà di piatti che vanno dagli spuntini alle portate principali e agli antipasti. La frittura può avvenire in padella, friggitrice o wok.",
-        "img"             => "fritti.jpeg",
+        "img"             => "fritti.jpg",
     ],
 ];
