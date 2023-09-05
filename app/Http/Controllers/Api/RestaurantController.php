@@ -24,11 +24,19 @@ class RestaurantController extends Controller
 
     public function show(Request $request, Restaurant $restaurant)
     { 
+        // $restaurantshow = DB::table('restaurants')
+        //     ->join ('plates', 'restaurants.id', '=', 'restaurant_id')
+        //     ->select('restaurants.id', 'restaurants.rest_name','restaurants.img', 'plates.restaurant_id', 'plates.name', 'plates.ingredients', 'plates.price')
+        //     ->get();
+
+        $restaurantId = $request;
+
         $restaurantshow = DB::table('restaurants')
-            ->join ('plates', 'restaurants.id', '=', 'restaurant_id')
-            ->select('restaurants.id', 'restaurants.rest_name','restaurants.img', 'plates.restaurant_id', 'plates.name', 'plates.ingredients', 'plates.price')
-            //->where('restaurants.id', '=', $request)
+            ->join('plates', 'restaurants.id', '=', 'plates.restaurant_id')
+            ->select('restaurants.id', 'restaurants.rest_name', 'restaurants.img', 'plates.restaurant_id', 'plates.name', 'plates.ingredients', 'plates.price')
+            ->where('restaurants.id', '=', $restaurantId)
             ->get();
+
         return response()->json($restaurantshow);
     }
 }
