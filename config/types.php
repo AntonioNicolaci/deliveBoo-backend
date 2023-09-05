@@ -54,7 +54,7 @@ return [
         // id = 7
         "name"            => "Thailandese ",
         "description"     => "La cucina thailandese è rinomata per la sua combinazione unica di sapori contrastanti e l'uso creativo di ingredienti freschi e aromatici. Caratterizzata da un mix di dolce, salato, acido, piccante e amaro, la cucina thailandese offre una vasta gamma di piatti che riflettono la cultura e la geografia del paese.",
-        "img"             => "tailandese.jpeg",
+        "img"             => "tailandese.jpg",
     ],
 
     [
