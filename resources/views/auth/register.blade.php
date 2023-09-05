@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" id="registerForm">
+                    <form method="POST" action="{{ route('register') }}" id="registerForm" enctype="multipart/form-data">
                         @csrf
 
                         <div class="mb-4 row">
@@ -123,7 +123,7 @@
                             <label for="img" class="col-md-4 col-form-label text-md-right">Aggiungi logo attività(Non funzionante)</label>
 
                             <div class="col-md-6">
-                                <input id="img" type="text" class="form-control" name="img" value="{{ old('img') }}" >
+                                <input id="img" type="file" class="form-control" name="img" value="{{ old('img') }}" >
                             </div>
                         </div>
                         

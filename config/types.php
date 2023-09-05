@@ -26,7 +26,7 @@ return [
         // id = 3
         "name"            => "Giapponese",
         "description"     => "Il sushi è un piatto tradizionale giapponese noto per la sua armonia di sapori, texture e presentazione estetica. È composto principalmente da riso condito con aceto di riso, che funge da base, e può essere abbinato a vari ingredienti come pesce crudo, verdure, alghe marine",
-        "img"             => "giapponense.jpeg",
+        "img"             => "giapponense.jpg",
     ],
 
     [

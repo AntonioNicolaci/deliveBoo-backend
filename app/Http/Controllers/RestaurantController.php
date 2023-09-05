@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Plate;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -50,9 +51,9 @@ class RestaurantController extends Controller
         return view('plates.create');
     }
 
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        $data = $request->all();
+        $img_path = Storage::disk('public')->put('uploads', $data['img']);
     }
 
     public function show(Restaurant $restaurant)
