@@ -33,7 +33,7 @@ class RestaurantController extends Controller
         
         $restaurantshow = DB::table('restaurants')
             ->join('plates', 'restaurants.id', '=', 'plates.restaurant_id')
-            ->select('restaurants.id', 'restaurants.rest_name', 'restaurants.img', 'plates.restaurant_id', 'plates.name', 'plates.ingredients', 'plates.price')
+            ->select('restaurants.id', 'restaurants.rest_name','restaurants.address', 'restaurants.img', 'plates.*')
             ->where('restaurants.id', '=', $restaurant->id)
             ->get();
 
