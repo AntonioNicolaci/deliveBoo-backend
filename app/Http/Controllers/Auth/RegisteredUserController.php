@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\TypeController;
 
 class RegisteredUserController extends Controller
@@ -35,15 +36,18 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $data = $request->all();
+
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:15'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'rest_name' => ['required', 'string', 'max:50'],
             'address' => ['required', 'string', 'max:50'],
-            'vat' => ['required', 'string', 'max:11', 'min:11', 'unique:'.Restaurant::class],
-            'img' => ['nullable', 'string', 'max:150'],
+            'vat' => ['required', 'string', 'max:11', 'min:11', 'unique:' . Restaurant::class],
+            'img' => ['nullable', 'image', 'max:150'],
             'types' => ['min:1']
         ]);
 
@@ -53,12 +57,17 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
+
+        $image = Storage::put('uploads', $data['img']);
+
+
         $restaurant = Restaurant::create([
             'rest_name' => $request->rest_name,
-            'address' => $request->address,
-            'vat' => $request->vat,
-            'img' => $request->img,
-            'user_id' => $user->id,
+            'address'   => $request->address,
+            'vat'       => $request->vat,
+            'img'       => $image,
+            'user_id'    => $user->id,
         ]);
 
         $restaurant->types()->sync($request["types"]);
