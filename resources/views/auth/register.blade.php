@@ -119,36 +119,46 @@
                                 <ul id="pIvaAlert" class="text-danger"></ul>
                             </div>
                         </div>
-                        <div class="mb-4 row">
-                            <label for="img" class="col-md-4 col-form-label text-md-right">Aggiungi logo attività(Non funzionante)</label>
-
-                            <div class="col-md-6">
-                                <input id="img" type="file" class="form-control" name="img" value="{{ old('img') }}" >
-                            </div>
+                        
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="img" name="img" accept="img/*">
+                            <label class="input-group-text  @error('img') is-invalid @enderror" for="img">Upload</label>
+                            @error('img')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
+                        
+                        
+                        
+                        
+                        
                         
                         <div class="mb-4 row">
                             <span class="col-md-4 col-form-label text-md-right">Tipologie di ristorante*</span>
                             @foreach ($types as $type)
-                                <label for="{{ $type->name }}">{{ $type->name }}</label>
-                                <input type="checkbox" name="types[]" id="{{ $type->name }}" value="{{ $type->id }}">
+                            <label for="{{ $type->name }}">{{ $type->name }}</label>
+                            <input type="checkbox" name="types[]" id="{{ $type->name }}" value="{{ $type->id }}">
                             @endforeach
                                 <ul id="typeAlert"  class="text-danger"></ul>
-                        </div>
-
-                        <div class="mb-4 row mb-0">
-                            <span for="checkSubmit">Confermo che i dati inseriti sono corretti e che non saranno modificabili in seguito.*</span>
-                            <input type="checkbox" name="checkSubmit" id="checkSubmit" onCheck="unlock(btnSub)">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary" id="btnSub" disabled>
-                                    Registrati
-                                </button>
                             </div>
-                        </div>
-                    </form>
+                            
+                            <div class="mb-4 row mb-0">
+                                <span for="checkSubmit">Confermo che i dati inseriti sono corretti e che non saranno modificabili in seguito.*</span>
+                                <input type="checkbox" name="checkSubmit" id="checkSubmit" onCheck="unlock(btnSub)">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary" id="btnSub" disabled>
+                                        Registrati
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
+    @endsection
+    
