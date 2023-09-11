@@ -38,10 +38,10 @@
 
     <h1>I Tuoi Piatti</h1>
 
-    <div class="d-flex">
+    {{-- <div class="d-flex">
       <h5>Crea un nuovo piatto</h5>
       <a class="btn btn-primary" href="{{ route('plates.create') }}">Crea</a>  
-    </div>
+    </div> --}}
 
     @if (session('delete_success'))
       @php $plate = session('delete_success') @endphp
@@ -56,7 +56,7 @@
           <th scope="col">Nome</th>
           <th scope="col">Ingredienti</th>
           <th class="w-auto" scope="col">Prezzo</th>
-          <th class="w-auto" scope="col" colspan="3">Visibile</th>        
+          <th class="w-auto" scope="col" colspan="5">Visibile</th>   
         </tr>
       </thead>
       <tbody>
@@ -66,6 +66,7 @@
             <td>{{$plate->ingredients}}</td>
             <td>€ {{number_format($plate->price/100, 2, ',', '')}}</td>
             <td class="text-center">{{$plate->visibility ? 'Sì' : 'No'}}</td>
+            <td></td>
             <td>
               <a href="{{ route('plates.update', ['plate' => $plate->id]) }}" method="GET"><i class="mt-2 fa-solid fa-pen"></i></a> 
             </td>
@@ -107,6 +108,11 @@
         @endforeach
       </tbody>
     </table>
+
+    <div class="d-flex justify-content-center align-items-center mb-5">
+      {{-- <h5>Crea un nuovo piatto</h5> --}}
+      <a class="btn btn-primary ps-5 pe-5 rounded-pill" href="{{ route('plates.create') }}">Aggiungi</a>  
+    </div>
   </div>
 @endsection
 
