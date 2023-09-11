@@ -28,5 +28,4 @@ Route::get('restaurants', [RestaurantApiController::class, 'index'])->name('api.
 Route::get('restaurants/{restaurant}', [RestaurantController::class, 'show'])->name('api.restaurants.show');
 Route::get('data', [DataApiController::class, 'index'])->name('api.data.index');
 
-Route::get('orders/generate', [OrderController::class, 'generate'])->name('api.order.generate');
-Route::post('orders/makePayment', [OrderController::class, 'makePayment'])->name('api.order.makePayment');
+Route::post('orders/makePayment', [OrderController::class, 'store'])->name('api.order.makePayment');
