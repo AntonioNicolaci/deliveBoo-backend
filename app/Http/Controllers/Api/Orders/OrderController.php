@@ -29,34 +29,6 @@ class OrderController extends Controller
             'card_name' => ['required', 'string', 'max:255'],
             'plates' => ['required', 'min:1']
         ]);
-
-        // $res_id = $request->plate[0]->res_id;
-        // $priceAll = null;
-
-        // $plates = Plate::where('restaurant_id', $res_id)->select("price");
-
-        // foreach ($request->plates as $key => $piattoClient) {
-        //     foreach ($plates as $key => $plate) {
-        //         if ($piattoClient->id == $plate->id) {
-        //             $priceAll += ($piattoClient->quantit * $plate->price);
-        //         }
-        //     }
-        // }
-
-
-        // $newOrder = Order::create([
-            
-        //         "restaurant_id" => $data['res_id'],
-        //         "name" => $data['name'],
-        //         "lastname" => $data['lastname'],
-        //         "pc" => $data['pc'],
-        //         "address" => $data['address'],
-        //         "phone" => strval($data['phone']),
-        //         "date" => $data['date'],
-        //         "status" => 1,
-        //         "price" => $data['price'],
-            
-        //     ]);
             
         $data = $request->all();
 
@@ -73,29 +45,7 @@ class OrderController extends Controller
         $newOrder->price = $data['price'];
         $newOrder->save();
 
-        // $newOrder->plates()->sync()
-
-        // foreach ($data['plates'] as $key => $value) {
-        //     $newBridge = new OrderPlate();
-
-        //     $newBridge->orders_id = $newOrder['id'];
-        //     $newBridge->plates_id = $value['id'];
-        //     $newBridge->amount = $value['quantit'];
-        //     $newBridge->save();
-        // };
-
-        // $newOrder->plates()->sync($data['plates']['id'], $data['plates']['quantit']);
-        $idArr = [];
-        $quantit = [];
-        foreach ($data['plates'] as $key => $value) {
-            array_push($idArr, $value['id']);
-            array_push($quantit, $value['quantit']);
-        }
+        return response(200);
         
-        $newOrder->plates()->sync($idArr, $quantit);
-
-        // return response($request->plates);
-        return response($quantit);
-        // return response(DB::table('plates')->where('restaurant_id', "=", $res_id)->get());
     }
 }
